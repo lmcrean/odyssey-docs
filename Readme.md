@@ -55,6 +55,15 @@ Moments is a social media platform. It has been designed for its users to share 
 - use Bootstrap default imports to minimize the build
 - deploy to Heroku
 
+### Testing in development:
+
+1. Open the terminal, this was resolved with gitpod
+2. Run `npm install` to install all dependencies
+3. before using `npm start` to start the development server, use `nvm install 16` to install the correct node version, followed by `nvm use 16` to switch to it.
+4. Run `npm start` to start the development server
+
+```env
+
 ## Tests:
 
 ### Automated:
