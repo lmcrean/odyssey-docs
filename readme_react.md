@@ -78,5 +78,4 @@ Once the app is running, navigate to the messaging section where you can:
 - **Responsive Interface**: The app adjusts seamlessly across devices due to the usage of `react-bootstrap`.
 
 ### **6. Acknowledgement and Credits**
-- Special thanks to the contributors to React and Bootstrap for providing an excellent development framework.
-- Thanks to [Axios](https://github.com/axios/axios) for handling HTTP requests and enabling smooth API interactions.
+- 
