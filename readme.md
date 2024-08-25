@@ -32,9 +32,92 @@
 
 ## 3.2. Structure of the application
 
-![lucidchart](https://res.cloudinary.com/dgjrrvdbl/image/upload/v1649155000/moments-component-map_rfth6q.png)
+Website Navigation for signed in user (Blue indicates a Navbar option)
 
-![Social Media Database Schema](https://supabase.mermaidchart.com/storage/v1/object/public/chatgpt-diagrams/2024-07-29/61f9b214-da12-4536-a035-41c95fa5e10b.png)
+```mermaid
+flowchart TD
+ subgraph PostsSection["Posts Section"]
+        B["Posts Page"]
+        D["Liked Posts"]
+        H["Create Post"]
+        I["View Post"]
+        J["Edit Post"]
+  end
+ subgraph ProfileSection["Profile Section"]
+        K["Profile Page"]
+        L["Edit Username"]
+        M["Edit Password"]
+        N["Edit Profile"]
+  end
+ subgraph MessageSection["Messages Section"]
+        O["Messages List"]
+        P["View Message"]
+        Q["Start New Message"]
+  end
+    A["Start"] --> B
+    B --> D & H & I & K & O & R["Not Found"]
+    I --> J
+    K --> L & M & N
+    O --> P & Q
+    style B fill:#2962FF
+    style D fill:#2962FF
+    style H fill:#2962FF
+    style K fill:#2962FF
+    style O fill:#2962FF
+```
+
+API Model Diagram:
+```mermaid
+erDiagram
+    User {
+        string username
+        string email
+        string password
+    }
+    Post {
+        string title
+        text content
+        image image
+        string image_filter
+        datetime created_at
+        datetime updated_at
+    }
+    Comment {
+        text content
+        datetime created_at
+        datetime updated_at
+    }
+    Follower {
+        datetime created_at
+    }
+    Like {
+        datetime created_at
+    }
+    Profile {
+        string name
+        text content
+        image image
+        datetime created_at
+        datetime updated_at
+    }
+    Message {
+        text content
+        image image
+        datetime timestamp
+        boolean read
+    }
+
+    User ||--o{ Post : owns
+    User ||--o{ Comment : writes
+    User ||--o{ Like : likes
+    User ||--o{ Follower : follows
+    User ||--o{ Profile : has
+    User ||--o{ Message : sends
+    Post ||--o{ Comment : receives
+    Post ||--o{ Like : receives
+    Follower ||--o{ User : followed
+    Message ||--o{ User : receives
+```
 
 ### 3.2.1. Most reused components:
 
