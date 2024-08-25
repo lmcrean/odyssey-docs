@@ -1,10 +1,12 @@
-# Moments - React
+# 1. PROJECT 5: React Frontend
 
-## Project description
+# 2. Features
 
-Moments is a social media platform. It has been designed for its users to share their life's moments. The application consists of the React app and an API. Welcome to the React front end project section.
+# 3. User Experience 
 
-## User stories
+
+
+## 3.1. User stories
 
 | Category  | as      | I want to                      | so that I can                                                                                    | UI components                                |
 | --------- | ------- | ------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------------------------------- |
@@ -28,11 +30,13 @@ Moments is a social media platform. It has been designed for its users to share 
 | followers | user    | follow a profile               | express my interest in someone's content                                                         | Profile follow button                        |
 | followers | user    | unfollow a profile             | express that my interest in someone's content has faded away and remove their posts from my feed | Profile (un) follow button                   |
 
-## Detailed page and component breakdown:
+## 3.2. Structure of the application
 
 ![lucidchart](https://res.cloudinary.com/dgjrrvdbl/image/upload/v1649155000/moments-component-map_rfth6q.png)
 
-## Most reused components:
+![Social Media Database Schema](https://supabase.mermaidchart.com/storage/v1/object/public/chatgpt-diagrams/2024-07-29/61f9b214-da12-4536-a035-41c95fa5e10b.png)
+
+### 3.2.1. Most reused components:
 
 - PostsPage:
   - Home, Feed, Liked
@@ -47,7 +51,13 @@ Moments is a social media platform. It has been designed for its users to share 
   - PostsPage (loading all, feed or liked Post components)
   - ProfilePage (loading Post components that belong to the profile)
 
-## Deployment steps
+# Agile Development
+
+Very important for this project was to develop a succesful agile development process. In particular Epics, sprints, user stories and acceptance criteria were used to manage the development process.
+
+
+
+# 4. Deployment steps
 
 - add prebuild script
 - add Procfile
@@ -55,18 +65,26 @@ Moments is a social media platform. It has been designed for its users to share 
 - use Bootstrap default imports to minimize the build
 - deploy to Heroku
 
-### Testing in development:
+## 4.1. Testing in development:
 
-1. Open the terminal, this was resolved with gitpod
+It is recommended to test the application with gitpod, as it is the environment where the application was developed. The following steps are required to run the application in development:
+
+React Frontend Repo:
+1. Open the terminal
 2. Run `npm install` to install all dependencies
 3. before using `npm start` to start the development server, use `nvm install 16` to install the correct node version, followed by `nvm use 16` to switch to it.
 4. Run `npm start` to start the development server
 
-```env
+API Backend Repo:
+1. Open the terminal
+2. Run `pip install -r requirements.txt` to install all dependencies
+3. Run `python manage.py runserver` to start the development server
 
-## Tests:
 
-### Automated:
+
+# 5. Tests:
+
+## 5.1. Automated:
 
 - used the msw library to mock user and logout endpoints
 - tested the NavBar component:
@@ -74,11 +92,11 @@ Moments is a social media platform. It has been designed for its users to share 
   - renders the link to a user profile for a logged in user
   - renders the sign in and sign up buttons again on logout
 
-### Manual:
+## 5.2. Manual:
 
 - every other feature tested extensively
 
-## Libraries, contexts and hooks:
+## 5.3. Libraries, contexts and hooks:
 
 - react-infinite-scroll-component
   - introduced to replace traditional pagination with lazy loading instead of pagination to make the application more performant and seem more snappy/ engaging
@@ -91,7 +109,8 @@ Moments is a social media platform. It has been designed for its users to share 
   - useClickOutsideToggle: enable toggle on the burger menu
   - useRedirect: enable redirect for users who are either logged in or logged out, depending on the use case
 
----
+# 6. Credits and acknowledgements
 
-Happy coding!
-![Social Media Database Schema](https://supabase.mermaidchart.com/storage/v1/object/public/chatgpt-diagrams/2024-07-29/61f9b214-da12-4536-a035-41c95fa5e10b.png)
+- "Moments" was used as a boilerplate for the project as it contained the necessary features for a social media platform. Both the API and the React frontend were built from this code.
+  - Frontend:
+  - API: Repo and Live Demo Links$$$$$$$$$$$$$$$$$$$$$
