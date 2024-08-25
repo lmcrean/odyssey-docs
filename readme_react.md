@@ -1,15 +1,24 @@
 
 # **Odyssey**
 
+
+<!--github shields here for React, css, javascript-->
+
+[http://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white](https://reactjs.org/)
+
+[http://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+[http://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
 This Readme Documents the Frontend of the Odyssey Messaging App. The Backend is documented in the [Odyssey API Readme]($$$$$$$$$$$).
 
 ## **Introduction**
 This is a messaging application built with React and integrated with a robust backend API. The app enables users to engage in one-on-one and group conversations, share multimedia, and stay connected with friends and colleagues. The app emphasizes real-time messaging, ease of use, and clean UI, making it ideal for a wide variety of users.
 
-## **Table of Contents** <!--omit from TOC--->
+## **Table of Contents** <!-- omit from toc --->
 - [**Odyssey**](#odyssey)
   - [**Introduction**](#introduction)
-  - [**Table of Contents** \<!--omit from TOC---\>](#table-of-contents---omit-from-toc---)
+  - [**Table of Contents** \<!-- omit from toc ---\>](#table-of-contents----omit-from-toc----)
     - [**1. Features**](#1-features)
     - [**2. User Stories**](#2-user-stories)
     - [**3. Automatic Testing**](#3-automatic-testing)
