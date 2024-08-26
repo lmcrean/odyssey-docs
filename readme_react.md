@@ -1,3 +1,4 @@
+<center>
 
 # **Odyssey** <!-- omit from toc -->
 
@@ -19,6 +20,8 @@ The Backend is documented in the [Odyssey API Readme]($$$$$$$$$$$).
 
 $$$$$$$$$
 
+</center>
+
 Sections include:
 [1. **Features**](#1-features)
 [2. **User Stories**](#2-2-user-stories)
@@ -38,13 +41,19 @@ Sections include:
   - [User Stories (Strategy and Scope Plane)](#user-stories-strategy-and-scope-plane)
   - [Structure of the Application](#structure-of-the-application)
   - [Skeleton](#skeleton)
+    - [Responsive Navbar for Mobile and Desktop](#responsive-navbar-for-mobile-and-desktop)
   - [Surface](#surface)
 - [3. **Automatic Testing**](#3-automatic-testing)
 - [4. **Installation**](#4-installation)
-- [5. **Usage**](#5-usage)
+- [5. Agile Methodology](#5-agile-methodology)
+  - [Epics](#epics)
+  - [Sprints with User Stories](#sprints-with-user-stories)
 - [6. **Acknowledgement and Credits**](#6-acknowledgement-and-credits)
   - [6.1. Moments app as boilerplate](#61-moments-app-as-boilerplate)
-  - [6.2. Use of LLM](#62-use-of-llm)
+  - [6.2. Use of LLMs](#62-use-of-llms)
+  - [6.3 Libraries](#63-libraries)
+  - [6.4 Personal Acknowledgements](#64-personal-acknowledgements)
+- [7. License](#7-license)
 
 ---
 
@@ -192,10 +201,18 @@ Authentication was omitted from the diagram for readability. To summarise:
 
 ## Skeleton
 
+To make the app, `react-bootstrap` was used for an efficient workflow.
 
+Where possible the app was designed
 
+### Responsive Navbar for Mobile and Desktop
+
+for the Navbar a desktop and mobile component was created to ensure a seamless experience across devices. Then through a hook the Navbar would switch according to screenwidth.
 
 ## Surface
+
+Global vars were used to efficently manage the color scheme and typography.
+
 
 # 3. **Automatic Testing**
 - The app includes automatic tests for core components and functionality using testing frameworks like Jest. 
@@ -206,11 +223,14 @@ Authentication was omitted from the diagram for readability. To summarise:
 - Tests cover components like message forms, message lists, and detail views to ensure the integrity of the app's messaging functionality.
 
 # 4. **Installation**
-To get the app up and running locally, follow these steps:
+
+It would be advisable to use the [Gitpod IDE](http://gitpod.io) for the installation process, as it is pre-configured with the necessary tools and dependencies, especially around `nvm` and linking to the API.
+
+To get the frontend app up and running locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone http://github.com/lmcrean/odyssey_react.git
    ```
 2. **Install dependencies**:
    Navigate to the project directory and install the required dependencies:
@@ -233,12 +253,15 @@ To get the app up and running locally, follow these steps:
    npm start
    ```
 
-# 5. **Usage**
-Once the app is running, navigate to the messaging section where you can:
-- **View Message Lists**: Access all your conversations in a list format.
-- **View Message Details**: Click on any conversation to see the detailed messages.
-- **Send New Messages**: Use the provided forms to send new messages in ongoing conversations or to start a new chat.
-- **Responsive Interface**: The app adjusts seamlessly across devices due to the usage of `react-bootstrap`.
+# 5. Agile Methodology
+
+## Epics
+
+The Epics were designed.
+
+## Sprints with User Stories
+
+THe user stories were distributed across sprints.
 
 # 6. **Acknowledgement and Credits**
 
@@ -249,7 +272,7 @@ Once the app is running, navigate to the messaging section where you can:
   - API:  https://github.com/Code-Institute-Solutions/drf-api
   - Live Demo: 
 
-## 6.2. Use of LLM
+## 6.2. Use of LLMs
 
 [![GPT-4o](https://img.shields.io/badge/GPT_4o-000000?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
 
@@ -264,3 +287,11 @@ Commit messages tended to be 95% accurate.
 Writing code tended to be anywhere between 50% and 70% accurate, and would require extensive revision with help, gradually moving into fully manual writing.
 
 Copilot, Phind and Claude were explored but GPT-4o was found to be the most accurate and helpful.
+
+## 6.3 Libraries
+
+## 6.4 Personal Acknowledgements
+
+# 7. License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

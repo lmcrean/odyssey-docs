@@ -1,4 +1,10 @@
 
+This repo focuses on the API for the social media platform. The API is built using Django Rest Framework.
+
+Anything already mentioned in the documentation of Frontend Repository, such as Agile Methodology, is omitted here for brevity.
+
+# Models Structure 
+
 API Model Diagram:
 ```mermaid
 erDiagram
@@ -38,6 +44,7 @@ erDiagram
         image image
         datetime timestamp
         boolean read
+        boolean is_user
     }
 
     User ||--o{ Post : owns
@@ -51,3 +58,17 @@ erDiagram
     Follower ||--o{ User : followed
     Message ||--o{ User : receives
 ```
+
+# Views and URLS with API endpoints
+
+Below summarises the API endpoints for the social media platform.
+
+# manual testing with Postman
+
+# automatic unit testing
+
+## Unit Testing
+
+## Linting
+
+# Libraries and Tools
