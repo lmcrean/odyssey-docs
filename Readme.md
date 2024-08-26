@@ -32,39 +32,7 @@
 
 ## 3.2. Structure of the application
 
-Website Navigation for signed in user (Blue indicates a Navbar option)
 
-```mermaid
-flowchart TD
- subgraph PostsSection["Posts Section"]
-        B["Posts Page"]
-        D["Liked Posts"]
-        H["Create Post"]
-        I["View Post"]
-        J["Edit Post"]
-  end
- subgraph ProfileSection["Profile Section"]
-        K["Profile Page"]
-        L["Edit Username"]
-        M["Edit Password"]
-        N["Edit Profile"]
-  end
- subgraph MessageSection["Messages Section"]
-        O["Messages List"]
-        P["View Message"]
-        Q["Start New Message"]
-  end
-    A["Start"] --> B
-    B --> D & H & I & K & O & R["Not Found"]
-    I --> J
-    K --> L & M & N
-    O --> P & Q
-    style B fill:#2962FF
-    style D fill:#2962FF
-    style H fill:#2962FF
-    style K fill:#2962FF
-    style O fill:#2962FF
-```
 
 API Model Diagram:
 ```mermaid
