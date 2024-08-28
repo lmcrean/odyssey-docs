@@ -105,6 +105,11 @@ The user stories are covered in the Agile Methodology.
 
 ```mermaid
 flowchart TD
+subgraph NavbarSignedout["NavbarSignedOut (signed out user)"]
+        NC["Home Feed"]
+        NA["Sign In"]
+        NB["Sign Up"]
+  end
  subgraph Navbar["Navbar (signed in user)"]
         A["Home Feed"]
         B["Create Post"]
@@ -153,8 +158,10 @@ flowchart TD
         WW["Send Message"]
         XX["Follow"]
   end
-    AI(("start")) --> A
-    A --> F
+    AI(("start")) --> NA & NB & NC
+    NB --> NA
+    NA --> A
+    A & NC --> F
     B --> F
     D --> N
     C --> S
@@ -180,6 +187,7 @@ flowchart TD
     style AC fill:#AA00FF
     style X fill:#AA00FF
     style Navbar fill:#00C853,color:#000000
+    style NavbarSignedout fill:#00C853,color:#000000
     style PostsList fill:#FFD600,color:#000000
     style PostsDetail fill:#FFD600,color:#000000
     style MessageList fill:#BBDEFB,color:#000000
