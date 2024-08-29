@@ -16,6 +16,18 @@ This Readme Documents the Frontend of the Odyssey Messaging App.
 
 The Backend is documented in the [Odyssey API Readme]($$$$$$$$$$$).
 
+
+
+---
+
+## Quick Links
+
+**[Live Project](https://odyssey-frontend-1fed9e7a199c.herokuapp.com/)**  *---*  **[Live API](https://odyssey-api-f3455553b29d.herokuapp.com/)**  
+
+**[Frontend Repository & Readme (you are here)](https://github.com/lmcrean/odyssey-react)**  *---*  **[API Repository & Readme](https://github.com/lmcrean/odyssey-api)**  *---* **[Agile Methodology Readme]($$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$)**
+
+---
+
 # **Introduction** <!-- omit from toc -->
 
 $$$$$$$$$
@@ -46,12 +58,11 @@ Sections include:
 - [3. **Automatic Testing**](#3-automatic-testing)
 - [4. **Installation**](#4-installation)
 - [5. Agile Methodology](#5-agile-methodology)
-  - [Epics](#epics)
-  - [Sprints with User Stories](#sprints-with-user-stories)
 - [6. **Acknowledgement and Credits**](#6-acknowledgement-and-credits)
   - [6.1. Moments app as boilerplate](#61-moments-app-as-boilerplate)
-  - [6.2. Use of LLMs](#62-use-of-llms)
-  - [6.3 Libraries](#63-libraries)
+  - [6.3. Libraries](#63-libraries)
+  - [Broader Software used](#broader-software-used)
+  - [6.4. Use of LLMs](#64-use-of-llms)
   - [6.4 Personal Acknowledgements](#64-personal-acknowledgements)
 - [7. License](#7-license)
 
@@ -263,36 +274,17 @@ To get the frontend app up and running locally, follow these steps:
 
 # 5. Agile Methodology
 
-## Epics
-
-The Epics were designed.
-
-## Sprints with User Stories
-
-THe user stories were distributed across sprints.
+As seperate Readme file is created to cover the Agile Methodology. 
 
 # 6. **Acknowledgement and Credits**
 
 ## 6.1. Moments app as boilerplate
 
-- "Moments" was used as a boilerplate for the project as it contained the necessary features for a social media platform. Both the API and the React frontend were built from this code.
+"Moments" was used as a boilerplate for the project as it contained the necessary features for a social media platform. Both the API and the React frontend were built from this code.
   - Frontend: https://github.com/Code-Institute-Solutions/moments
   - API:  https://github.com/Code-Institute-Solutions/drf-api
-  - Live Demo: 
 
-## 6.2. Use of LLMs
-
-GPT-4o and Claude Sonnet 3.5 were used as an AI tool to generate initial drafts which would be meticulously reviewed.
-
-- writing detailed commit messages
-- automatic testing with Python and Jest
-- implementation of new features
-
-Commit messages tended to be 95% accurate.
-
-Writing code tended to be anywhere between 50% and 70% accurate, and would require extensive revision with help, gradually moving into fully manual writing.
-
-## 6.3 Libraries
+## 6.3. Libraries
 
 Below is a table listing the key dependencies and devDependencies used in this project, along with brief descriptions and links to more information.
 
@@ -317,6 +309,34 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **web-vitals==^1.1.2**                                        | [web-vitals](https://www.npmjs.com/package/web-vitals) is a library for measuring essential web performance metrics.                                                  |
 | **@babel/plugin-proposal-private-property-in-object==^7.21.11** | [@babel/plugin-proposal-private-property-in-object](https://www.npmjs.com/package/@babel/plugin-proposal-private-property-in-object) adds support for private properties in objects. This cleared a warning message in the console. |
 | **msw==^0.35.0**                                              | [msw](https://www.npmjs.com/package/msw) is a mocking library for intercepting network requests during testing.                                                       |
+
+
+## Broader Software used
+
+| Software & Version | Description                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------|
+| **Node.js**        | [Node.js](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine. |
+| **npm**            | [npm](https://www.npmjs.com/) is the package manager for JavaScript and the world's largest software registry. |
+| **nvm**            | [nvm](https://github.com/nvm-sh/nvm) is a version manager for Node.js, allowing you to install and switch between multiple versions of Node.js. |
+| **VSCode**         | [VSCode](https://code.visualstudio.com/) is a popular code editor that provides a range of features for efficient coding. |
+| **Git**            | [Git](https://git-scm.com/) is a distributed version control system for tracking changes in source code during software development. |
+| **GitHub**         | [GitHub](https://github.com/) is a platform for hosting and collaborating on Git repositories, providing tools for version control and project management. |
+| **Heroku**         | [Heroku](https://www.heroku.com/) is a cloud platform that enables developers to build, deliver, monitor, and scale applications. |
+| **Cloudinary**     | [Cloudinary](https://cloudinary.com/) is a cloud-based image and video management service that provides storage, optimization, and delivery solutions. |
+| **PostgreSQL**     | [PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system. |
+| **Gitpod**         | [Gitpod](https://www.gitpod.io/) is an online IDE that provides a fully equipped workspace for development. |
+
+## 6.4. Use of LLMs
+
+GPT-4o and Claude Sonnet 3.5 were used as an AI tool to generate initial drafts which would be meticulously reviewed.
+
+- writing detailed commit messages
+- automatic testing with Python and Jest
+- implementation of new features
+
+Commit messages tended to be 95% accurate.
+
+Writing code tended to be anywhere between 50% and 70% accurate, and would require extensive revision with help, gradually moving into fully manual writing.
 
 
 ## 6.4 Personal Acknowledgements
