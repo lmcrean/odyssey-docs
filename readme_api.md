@@ -59,7 +59,7 @@ erDiagram
     Message ||--o{ User : receives
 ```
 
-# Views and URLS with API endpoints
+# API endpoints, Manual Testing with Postman 
 
 Below summarises the API endpoints for the social media platform.
 
@@ -85,9 +85,87 @@ Below summarises the API endpoints for the social media platform.
 | PUT         | /posts/{id}/                   | Update a post (title, content, image, or all) | Detail                       | {<br>"title": "My Test Post (Postman API)"<br>"content": "This is a test post content"<br>"image": "test_image.png"<br>} | {<br>"id": 48,<br>"owner": "postmanuser",<br>"is_owner": true,<br>"profile_id": 24,<br>"profile_image": "https://res.cloudinary.com/dh5lpihx1/image/upload/v1/media/images/default_profile_dqcubz.jpg",<br>"created_at": "27 Aug 2024",<br>"updated_at": "28 Aug 2024",<br>"title": "My Test Post (Postman API)",<br>"content": "This is a test post content",<br>"image": "https://res.cloudinary.com/dh5lpihx1/image/upload/v1/media/images/test_image_z1iqf3",<br>"image_filter": "normal",<br>"like_id": null,<br>"likes_count": 0,<br>"comments_count": 0<br>}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | DELETE      | /posts/{id}/                   | Delete a specific post                        |                              |                                                                                                                          |
 
-# automatic unit testing
+## Models App Overview
 
-## Unit Testing
+This Django-based messaging app provides a robust backend for a real-time chat application. It includes features such as sending messages, managing conversations, and handling user profiles.
+
+## Models
+
+The core model of the application is `Message`, which includes the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `sender` | ForeignKey | User who sent the message |
+| `recipient` | ForeignKey | User who received the message |
+| `content` | TextField | Content of the message |
+| `image` | CloudinaryField | Optional image attachment |
+| `timestamp` | DateTimeField | Time when the message was sent |
+| `read` | BooleanField | Indicates if the message has been read |
+
+## Views
+
+1. **MessageListView**: Displays a list of users the current user has had conversations with, along with the last message and timestamp.
+
+2. **MessageDetailView**: Shows the thread of messages between two users.
+
+3. **MessageDetailSendView**: Allows sending a new message in an existing conversation.
+
+4. **MessageListStartNewView**: Initiates a new conversation with a user.
+
+5. **MessageDeleteView**: Deletes a specific message.
+
+6. **ChatDeleteView**: Deletes an entire conversation between two users.
+
+7. **MessageUpdateView**: Allows editing of a sent message.
+
+## Serializers
+
+The `MessageSerializer` handles the serialization of Message objects, including:
+- Formatting date and time
+- Retrieving sender and recipient profile images
+- Determining if the current user is the sender
+- Fetching and truncating the last message
+- Validating image uploads
+
+## URLs
+
+The app uses the following URL patterns:
+
+| Endpoint | Description |
+|----------|-------------|
+| `/messages/` | List all conversations |
+| `/messages/<int:user_id>/` | View/send messages in a specific conversation |
+| `/messages/<int:user_id>/send/` | Send a new message |
+| `/messages/<int:user_id>/start/` | Start a new conversation |
+| `/messages/<int:pk>/delete/` | Delete a specific message |
+| `/messages/<int:pk>/update/` | Update a specific message |
+| `/chats/<int:user_id>/delete/` | Delete an entire conversation |
+
+## Tests
+
+The app includes comprehensive test coverage:
+
+1. **MessageWithImageTestCase**: Tests sending messages with images.
+2. **MessageWithImageValidationTestCase**: Validates image uploads, including size and format restrictions.
+3. **MessageListViewTest**: Tests the conversation list view.
+4. **IsSenderFieldTests**: Ensures the `is_sender` field is correctly set.
+5. **MessageSerializerTests**: Validates the message serializer functionality.
+6. **ChatDeleteTest**: Tests the chat deletion feature.
+7. **MessageSendTests**: Verifies message sending functionality.
+8. **MessageDeleteTest**: Checks message deletion.
+9. **MessageListStartNewViewTests**: Tests initiating new conversations.
+10. **MessageUpdateTests**: Verifies message editing functionality.
+11. **MessageModelTests**: Ensures correct timestamp behavior for messages.
+
+## Key Features
+
+- Real-time messaging
+- Image support in messages
+- User profile integration
+- Conversation management (start, delete)
+- Message operations (send, edit, delete)
+- Comprehensive test coverage
+- Cloudinary integration for image storage
 
 ## Linting
 
