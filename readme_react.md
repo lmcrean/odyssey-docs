@@ -232,14 +232,45 @@ for the Navbar a desktop and mobile component was created to ensure a seamless e
 
 Global vars were used to efficently manage the color scheme and typography.
 
-
 # 3. **Automatic Testing**
-- The app includes automatic tests for core components and functionality using testing frameworks like Jest. 
+The app includes automatic tests for core components and functionality using testing frameworks like Jest. 
+
 - To run tests, use the following command:
   ```bash
   npm test
   ```
 - Tests cover components like message forms, message lists, and detail views to ensure the integrity of the app's messaging functionality.
+
+
+
+```bash
+ PASS  src/pages/messaging/__tests__/MessageDetailSendFormAPI.test.js
+ PASS  src/pages/auth/__tests__/SignUpForm.test.js (5.295 s)
+ PASS  src/pages/messaging/__tests__/MessageWithImage.test.js (5.58 s)
+ PASS  src/pages/messaging/__tests__/Message.test.js (5.51 s)
+ PASS  src/pages/messaging/__tests__/MessageDetailSendForm.test.js (5.992 s)
+ PASS  src/App.test.js (6.04 s)
+
+Test Suites: 6 passed, 6 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        7.916 s
+Ran all test suites.
+```
+
+Here's a summary of the test files and what they cover:
+
+## Test Summaries
+| Test File | Description | Key Methodologies |
+|-----------|-------------|-------------------|
+| Message.test.js | - Tests fetching and displaying the sender's username<br>- Checks error handling when fetching username fails<br>- Verifies the opening and closing of the delete modal<br>- Ensures proper rendering of message content and metadata | - Mocking API responses (axios)<br>- Rendering components with React Testing Library<br>- Simulating user interactions (fireEvent)<br>- Asynchronous testing (act, waitFor)<br>- Snapshot testing for UI consistency |
+| MessageDetailSendForm.test.js | - Tests the submission of a message with an image<br>- Verifies form data handling and API call formation | - Mocking API calls (axiosReq)<br>- Form submission testing<br>- File input handling<br>- Asynchronous testing (waitFor)<br>- Checking API call parameters |
+| MessageDetailSendFormAPI.test.js | - Mocks and tests the API call for sending a message with an image<br>- Verifies the structure and content of the API response | - Mocking Axios for API calls<br>- Testing API endpoint and payload<br>- Verifying response structure<br>- Handling FormData in tests |
+| MessageWithImage.test.js | - Tests the rendering of a message component with an attached image<br>- Verifies the correct display of message content and image | - Rendering components with React Testing Library<br>- Mocking Context API (useCurrentUser)<br>- Asynchronous component testing (act)<br>- Testing image rendering and attributes |
+| SignUpForm.test.js | - Tests the rendering of the sign-up form<br>- Checks form validation and error display<br>- Verifies form submission and redirection on success | - Rendering components with React Testing Library<br>- Mocking API calls (axios)<br>- Simulating form input and submission<br>- Testing error handling and display<br>- Checking navigation/redirection (useHistory mock) |
+
+The most common methodologies used in testing were mocking API calls with `axios` and `jest.mock`, rendering components with `React Testing Library`, simulating user interactions with `fireEvent`, and handling asynchronous testing with `act` and `waitFor`. Asynchronous testing means that the test waits for a certain condition to be met before proceeding, ensuring that the app behaves as expected in real-world scenarios.
+
 
 # 4. **Installation**
 
