@@ -89,7 +89,7 @@ Below summarises the API endpoints for the social media platform.
 
 This Django-based messaging app provides a robust backend for a real-time chat application. It includes features such as sending messages, managing conversations, and handling user profiles.
 
-## Models
+### Models
 
 The core model of the application is `Message`, which includes the following fields:
 
@@ -102,7 +102,7 @@ The core model of the application is `Message`, which includes the following fie
 | `timestamp` | DateTimeField | Time when the message was sent |
 | `read` | BooleanField | Indicates if the message has been read |
 
-## Views
+### Views
 
 1. **MessageListView**: Displays a list of users the current user has had conversations with, along with the last message and timestamp.
 
@@ -118,7 +118,7 @@ The core model of the application is `Message`, which includes the following fie
 
 7. **MessageUpdateView**: Allows editing of a sent message.
 
-## Serializers
+### Serializers
 
 The `MessageSerializer` handles the serialization of Message objects, including:
 - Formatting date and time
@@ -127,7 +127,7 @@ The `MessageSerializer` handles the serialization of Message objects, including:
 - Fetching and truncating the last message
 - Validating image uploads
 
-## URLs
+### URLs
 
 The app uses the following URL patterns:
 
@@ -141,7 +141,7 @@ The app uses the following URL patterns:
 | `/messages/<int:pk>/update/` | Update a specific message |
 | `/chats/<int:user_id>/delete/` | Delete an entire conversation |
 
-## Tests
+### Tests
 
 The app includes comprehensive test coverage:
 
@@ -157,7 +157,7 @@ The app includes comprehensive test coverage:
 10. **MessageUpdateTests**: Verifies message editing functionality.
 11. **MessageModelTests**: Ensures correct timestamp behavior for messages.
 
-## Key Features
+### Key Features
 
 - Real-time messaging
 - Image support in messages
@@ -167,7 +167,154 @@ The app includes comprehensive test coverage:
 - Comprehensive test coverage
 - Cloudinary integration for image storage
 
-## Linting
+# App Components: Posts, Comments, Likes, Follows, Users, and Profiles
+
+This section provides an overview of the core components of our social media application, excluding the messaging functionality.
+
+## Posts app
+
+This app manages user posts, including creation, retrieval, updating, and deletion. It also handles post likes and comments.
+
+Key features
+
+- Create, view, update, and delete posts
+- Filter posts by user, followed users, and liked posts
+
+### Model
+The `Post` model is defined in `posts/models.py`:
+
+| Field | Type | Properties |
+|-------|------|------------|
+| owner | ForeignKey | User model |
+| created_at | DateTimeField | auto_now_add=True |
+| updated_at | DateTimeField | auto_now=True |
+| title | CharField | max_length=255 |
+| content | TextField | blank=True |
+| image | ImageField | upload_to='images/', default='../default_post_rgq6aq', blank=True |
+
+Ordering: ['-created_at']
+
+### Views
+Located in `posts/views.py`:
+
+| View | Type | Description |
+|------|------|-------------|
+| PostList | ListCreateAPIView | List and create posts, custom ordering, filtering |
+| PostDetail | RetrieveUpdateDestroyAPIView | Retrieve, update, delete individual posts |
+
+Both views use `IsOwnerOrReadOnly` permission class.
+
+### Serializer
+`PostSerializer` in `posts/serializers.py`:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id, owner, title, content, image | Model fields | Direct from Post model |
+| is_owner | SerializerMethodField | Check if current user is post owner |
+| profile_id, profile_image | ReadOnlyField | From user's profile |
+| created_at, updated_at | ReadOnlyField | Timestamp fields |
+| like_id | SerializerMethodField | ID of current user's like, if any |
+| likes_count | SerializerMethodField | Total number of likes |
+| comments_count | SerializerMethodField | Total number of comments |
+
+Custom methods:
+- `validate_image`: Validates image file size and dimensions
+- `get_is_owner`, `get_like_id`, `get_likes_count`, `get_comments_count`: Compute respective fields
+
+### Filters
+Custom `PostFilter` in `posts/views.py`:
+
+| Filter | Description |
+|--------|-------------|
+| owner | Posts by a specific user |
+| followed | Posts from followed users |
+| liked | Posts liked by the current user |
+
+### URLs
+Defined in `posts/urls.py`:
+
+| Endpoint | Methods | Description |
+|----------|---------|-------------|
+| `posts/` | GET, POST | List and create posts |
+| `posts/<int:pk>/` | GET, PUT, PATCH, DELETE | Retrieve, update, delete a specific post |
+
+### Tests
+Located in `posts/tests.py`:
+
+| Test Class | Description | Key Tests |
+|------------|-------------|-----------|
+| PostListViewTests | Tests for post creation | - Create post when logged in<br>- Cannot create post when logged out<br>- Post title is required<br>- Image size limits |
+| PostDetailViewTests | Tests for post operations | - Retrieve post by id<br>- Update own post<br>- Cannot update others' posts<br>- Delete own post<br>- Cannot delete others' posts |
+| PostListViewFilterTests | Tests for post filtering | - Filter by followed users<br>- Filter when not following anyone<br>- Filter liked posts<br>- Filter by specific user |
+| PostListViewOrderTests | Tests for post ordering | - Order by likes<br>- Order by comments<br>- Default order (created date) |
+
+## Comments
+
+key features:
+- Create, view, update, and delete comments
+
+| Aspect | Details |
+|--------|---------|
+| Model | `Comment` in `comments/models.py`<br>Fields: owner (User), post (Post), created_at, updated_at, content |
+| Views | `CommentList` (ListCreateAPIView)<br>`CommentDetail` (RetrieveUpdateDestroyAPIView) |
+| Serializer | `CommentSerializer` and `CommentDetailSerializer` in `comments/serializers.py`<br>Custom fields: is_owner, formatted timestamps |
+| Tests | Located in `comments/tests.py`<br>Should cover: creation, retrieval, update, deletion |
+
+## Likes app
+
+Key features:
+- Like posts
+- View likes count for each post
+- Unlike posts
+
+| Aspect | Details |
+|--------|---------|
+| Model | `Like` in `likes/models.py`<br>Fields: owner (User), post (Post), created_at<br>Unique constraint: owner and post |
+| Views | `LikeList` (ListCreateAPIView)<br>`LikeDetail` (RetrieveDestroyAPIView) |
+| Serializer | `LikeSerializer` in `likes/serializers.py`<br>Handles unique constraint in create method |
+| Tests | Located in `likes/tests.py`<br>Should cover: creation, retrieval, deletion, duplicate attempts |
+
+## Follows app
+
+Key features
+- Follow users
+- View followers and following count
+- Unfollow users
+
+| Aspect | Details |
+|--------|---------|
+| Model | `Follower` in `followers/models.py`<br>Fields: owner (User), followed (User), created_at<br>Unique constraint: owner and followed |
+| Views | `FollowerList` (ListCreateAPIView)<br>`FollowerDetail` (RetrieveDestroyAPIView) |
+| Serializer | `FollowerSerializer` in `followers/serializers.py`<br>Handles unique constraint in create method |
+| Tests | Located in `followers/tests.py`<br>Should cover: creation, retrieval, deletion, duplicate attempts |
+
+## Users app
+
+This is the core app for user management, including registration, authentication, and profile management, it is mostly handled by Django's built-in User model.
+
+| Aspect | Details |
+|--------|---------|
+| Model | Django's built-in User model |
+| Views | `UserListView` (ListAPIView)<br>`UserDetailView` (RetrieveAPIView) |
+| Serializer | `UserSerializer` (assumed) |
+| Tests | Not explicitly provided, but should be implemented |
+
+## Profiles app
+
+This is an extension of the User model, providing additional fields and functionality for user profiles.
+
+Key features:
+- Create, view, update, and delete profiles
+- Retrieve profiles by user ID
+- Upload profile images
+
+| Aspect | Details |
+|--------|---------|
+| Model | Not explicitly provided, but likely exists |
+| Views | Not explicitly provided, but likely includes profile CRUD operations |
+| Serializer | Not explicitly provided, but likely exists |
+| Tests | Not explicitly provided, but should be implemented |
+
 
 # Libraries and Tools
 
@@ -200,3 +347,5 @@ Below is a table listing the key dependencies used in this project, along with b
 | **pytz==2021.1**                            | [pytz](https://pypi.org/project/pytz/) is a Python library that brings the Olson tz database into Python, allowing for accurate and cross-platform timezone calculations.|
 | **requests-oauthlib==1.3.0**                | [requests-oauthlib](https://pypi.org/project/requests-oauthlib/) provides OAuthlib authentication support for Python’s Requests library.                               |
 | **sqlparse==0.4.1**                         | [sqlparse](https://pypi.org/project/sqlparse/) is a non-validating SQL parser for Python, useful for formatting and parsing SQL statements.                            |
+
+
