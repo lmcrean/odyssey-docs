@@ -308,12 +308,67 @@ Key features:
 - Retrieve profiles by user ID
 - Upload profile images
 
+
+## Profiles
+
 | Aspect | Details |
 |--------|---------|
-| Model | Not explicitly provided, but likely exists |
-| Views | Not explicitly provided, but likely includes profile CRUD operations |
-| Serializer | Not explicitly provided, but likely exists |
-| Tests | Not explicitly provided, but should be implemented |
+| Model | `Profile` in `profiles/models.py`<br>Fields: owner (OneToOneField to User), created_at, updated_at, name, content, image |
+| Views | `ProfileList` (ListAPIView)<br>`ProfileDetail` (RetrieveUpdateAPIView) |
+| Serializer | `ProfileSerializer` in `profiles/serializers.py` |
+| Tests | Located in `profiles/tests.py` |
+
+### Model
+The `Profile` model is defined in `profiles/models.py`:
+
+| Field | Type | Properties |
+|-------|------|------------|
+| owner | OneToOneField | User model, on_delete=models.CASCADE |
+| created_at | DateTimeField | auto_now_add=True |
+| updated_at | DateTimeField | auto_now=True |
+| name | CharField | max_length=255, blank=True |
+| content | TextField | blank=True |
+| image | ImageField | upload_to='images/', default='../default_profile_qdjgyp' |
+
+### Views
+Located in `profiles/views.py`:
+
+| View | Type | Description |
+|------|------|-------------|
+| ProfileList | ListAPIView | List all profiles |
+| ProfileDetail | RetrieveUpdateAPIView | Retrieve and update individual profiles |
+
+`ProfileDetail` uses `IsOwnerOrReadOnly` permission class.
+
+### Serializer
+`ProfileSerializer` in `profiles/serializers.py`:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| owner | ReadOnlyField | Username of the profile owner |
+| is_owner | SerializerMethodField | Check if current user is profile owner |
+| following_id | SerializerMethodField | ID of follower object if user is following this profile |
+| posts_count | ReadOnlyField | Number of posts by the profile owner |
+| followers_count | ReadOnlyField | Number of followers for the profile |
+| following_count | ReadOnlyField | Number of users the profile owner is following |
+
+### Unit Tests
+Located in `profiles/tests.py`:
+
+| Test Class | Description | Key Tests |
+|------------|-------------|-----------|
+| ProfileListViewTests | Tests for profile list view | - Retrieve all profiles |
+| ProfileDetailViewTests | Tests for profile detail view | - Retrieve profile by id<br>- Update own profile<br>- Cannot update other users' profiles |
+
+These tests cover profile retrieval and update operations, ensuring that proper permissions are enforced.
+
+### URLs
+Defined in `profiles/urls.py`:
+
+| Endpoint | Methods | Description |
+|----------|---------|-------------|
+| `profiles/` | GET | List all profiles |
+| `profiles/<int:pk>/` | GET, PUT | Retrieve or update a specific profile |
 
 
 # Libraries and Tools
