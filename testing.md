@@ -1,6 +1,21 @@
 # Testing
 
 
+`Table of Contents`
+
+- [Testing](#testing)
+- [Manual Testing](#manual-testing)
+  - [Test 1: Testing the Navbar](#test-1-testing-the-navbar)
+  - [Test 2: Testing the Home Feed](#test-2-testing-the-home-feed)
+  - [Test 3: Testing the Post functionality](#test-3-testing-the-post-functionality)
+  - [Test 4: Testing the Profile Page](#test-4-testing-the-profile-page)
+  - [Test 5: Testing the Messages Page](#test-5-testing-the-messages-page)
+  - [Test 6: Testing the Sign Up Page](#test-6-testing-the-sign-up-page)
+  - [Test 7: Testing the Sign In Page](#test-7-testing-the-sign-in-page)
+  - [Test 8: Popular profiles component](#test-8-popular-profiles-component)
+  - [Test 9: Landing Page](#test-9-landing-page)
+
+
 # Manual Testing 
 
 Pass criteria includes no warning messages, no errors.
@@ -46,8 +61,8 @@ Pass criteria includes no warning messages, no errors.
 | Edit username | Signed in | User is able to edit their profile username | Edited the profile username | User was able to edit their username | Pass |
 | Edit bio | Signed in | User is able to edit their profile bio | Edited the profile bio | User was able to edit their bio | Pass |
 | Edit profile picture | Signed in | User is able to edit their profile picture | Edited the profile picture | User was able to edit their profile picture | FAIL$$$$$$$$$$ |
-| follow user link |
-| message user link | 
+| follow user link | Signed in | User is able to follow another user | Followed another user | User was able to follow another user | Pass |
+| message user link | Signed in | User is able to message another user | Messaged another user | User was able to message another user | Pass |
 
 ## Test 5: Testing the Messages Page
 
@@ -87,4 +102,3 @@ Pass criteria includes no warning messages, no errors.
 | Landing Page | Both | User is able to view the landing page | Viewed the landing page | User was able to view the landing page | Pass |
 | Sign Up | Signed out | User is able to sign up from the landing page | Signed up from the landing page | User was able to sign up from the landing page | Pass |
 | Sign In | Signed out | User is able to sign in from the landing page | Signed in from the landing page | User was able to sign in from the landing page | Pass |
-
