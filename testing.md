@@ -46,8 +46,10 @@ Pass criteria includes no warning messages, no errors.
 | Edit username | Signed in | User is able to edit their profile username | Edited the profile username | User was able to edit their username | Pass |
 | Edit bio | Signed in | User is able to edit their profile bio | Edited the profile bio | User was able to edit their bio | Pass |
 | Edit profile picture | Signed in | User is able to edit their profile picture | Edited the profile picture | User was able to edit their profile picture | FAIL$$$$$$$$$$ |
+| follow user link |
+| message user link | 
 
-# Test 5: Testing the Messages Page
+## Test 5: Testing the Messages Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -56,16 +58,33 @@ Pass criteria includes no warning messages, no errors.
 | Send Message | Signed in | User is able to send a message | Sent a message | User was able to send a message | Pass |
 | Delete Message | Signed in | User is able to delete a message | Deleted a message | User was able to delete a message | Pass |
 
-# Test 6: Testing the Sign Up Page
+## Test 6: Testing the Sign Up Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Sign Up | Signed out | User is able to sign up | Signed up | User was able to sign up | Pass |
 | Sign Up Validation | Signed out | User is unable to sign up with invalid credentials | Signed up with invalid credentials | User was unable to sign up | Pass |
 
-# Test 7: Testing the Sign In Page
+## Test 7: Testing the Sign In Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Sign In | Signed out | User is able to sign in | Signed in | User was able to sign in | Pass |
 | Sign In Validation | Signed out | User is unable to sign in with invalid credentials | Signed in with invalid credentials | User was unable to sign in | Pass |
+
+## Test 8: Popular profiles component
+
+| Feature | Auth status: <br> Signed in/Signed out/ Both | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- | --- |
+| Popular profiles | Both | User is able to view popular profiles | Viewed popular profiles | User was able to view popular profiles | Pass |
+| Follow user | Signed in | User is able to follow a popular profile | Followed a popular profile | User was able to follow a popular profile | Pass |
+| Message user | Signed in | User is able to message a popular profile | Messaged a popular profile | User was able to message a popular profile | Pass |
+
+## Test 9: Landing Page
+
+| Feature | Auth status: <br> Signed in/Signed out/ Both | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- | --- |
+| Landing Page | Both | User is able to view the landing page | Viewed the landing page | User was able to view the landing page | Pass |
+| Sign Up | Signed out | User is able to sign up from the landing page | Signed up from the landing page | User was able to sign up from the landing page | Pass |
+| Sign In | Signed out | User is able to sign in from the landing page | Signed in from the landing page | User was able to sign in from the landing page | Pass |
+
