@@ -14,6 +14,11 @@
   - [Test 7: Testing the Sign In Page](#test-7-testing-the-sign-in-page)
   - [Test 8: Popular profiles component](#test-8-popular-profiles-component)
   - [Test 9: Landing Page](#test-9-landing-page)
+- [Automated Testing in Frontend with Jest, Cypress and Playwright](#automated-testing-in-frontend-with-jest-cypress-and-playwright)
+  - [Jest Testing](#jest-testing)
+  - [Cypress Testing](#cypress-testing)
+  - [Playwright Testing](#playwright-testing)
+- [Automated Testing in Backend with python](#automated-testing-in-backend-with-python)
 
 
 # Manual Testing 
@@ -102,3 +107,38 @@ Pass criteria includes no warning messages, no errors.
 | Landing Page | Both | User is able to view the landing page | Viewed the landing page | User was able to view the landing page | Pass |
 | Sign Up | Signed out | User is able to sign up from the landing page | Signed up from the landing page | User was able to sign up from the landing page | Pass |
 | Sign In | Signed out | User is able to sign in from the landing page | Signed in from the landing page | User was able to sign in from the landing page | Pass |
+
+# Automated Testing in Frontend with Jest, Cypress and Playwright
+
+## Jest Testing
+
+Tests are located in the `__tests__` folder, interspersed throughout the js files. To run the tests, use the following command:
+
+```bash
+npm run test
+```
+
+## Cypress Testing
+
+Tests are located in the `cypress/integration` folder. To run the tests, use the following command:
+
+```bash
+npm run test:e2e
+```
+
+
+## Playwright Testing
+
+Tests are located in the `playwright` folder. To run the tests, use the following command:
+
+```bash
+npx playwright test
+```
+
+# Automated Testing in Backend with python
+
+Tests are located in the `tests` subfolders, each nested in the relevant app folder. To run the tests, use the following command:
+
+```bash
+python3 manage.py test
+```
