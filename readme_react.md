@@ -8,6 +8,8 @@ Odyssey is a social media application with a messaging feature.
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white) ![Bootstrap](https://img.shields.io/badge/React_Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white) ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white) ![Django Rest Framework](https://img.shields.io/badge/Django%20Rest%20Framework-092E20?style=for-the-badge&logo=django&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
+
+![Cypress](https://img.shields.io/badge/cypress-4%20passed%2C%200%20failed-brightgreen?logo=cypress) ![Jest](https://img.shields.io/badge/jest-10%20passed%2C%200%20failed-brightgreen?logo=jest) ![Playwright](https://img.shields.io/badge/playwright-5%20passed%2C%200%20failed-brightgreen?logo=playwright) ![Python](https://img.shields.io/badge/python-31%20passed%2C%200%20failed-brightgreen?logo=python)
 ***
 
 The documentation is split into two parts: the frontend and the backend.
@@ -56,6 +58,7 @@ Sections include:
     - [Responsive Navbar for Mobile and Desktop](#responsive-navbar-for-mobile-and-desktop)
   - [Surface](#surface)
 - [3. **Automatic Testing**](#3-automatic-testing)
+  - [Test Summaries](#test-summaries)
 - [4. **Installation**](#4-installation)
 - [5. Agile Methodology](#5-agile-methodology)
 - [6. **Acknowledgement and Credits**](#6-acknowledgement-and-credits)
