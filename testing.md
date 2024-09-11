@@ -122,6 +122,25 @@ npm run test
 
 Tests are located in the `cypress/integration` folder. To run the tests, use the following command:
 
+1. Open a split terminal, run the following command to start the server:
+
+```bash
+nvm install 16
+npm run build
+npm run start
+```
+
+2. In the other terminal, run the following command to set up cypress:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+npx cypress install
+npx cypress verify
+```
+
+3. In the same terminal, run the following command to run the tests:
+
 ```bash
 npm run test:e2e
 ```
@@ -129,9 +148,10 @@ npm run test:e2e
 
 ## Playwright Testing
 
-Tests are located in the `playwright` folder. To run the tests, use the following command:
+Tests are located in the `playwright` folder. To run the tests, use the following commands:
 
 ```bash
+npx playwright install --with-deps
 npx playwright test
 ```
 
