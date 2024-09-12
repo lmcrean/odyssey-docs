@@ -60,6 +60,7 @@ Sections include:
 - [3. **Automatic Testing**](#3-automatic-testing)
   - [Test Summaries](#test-summaries)
 - [4. **Installation**](#4-installation)
+  - [Note on compiling static files](#note-on-compiling-static-files)
 - [5. Agile Methodology](#5-agile-methodology)
 - [6. **Acknowledgement and Credits**](#6-acknowledgement-and-credits)
   - [6.1. Moments app as boilerplate](#61-moments-app-as-boilerplate)
@@ -305,6 +306,16 @@ To get the frontend app up and running locally, follow these steps:
    ```bash
    npm start
    ```
+
+## Note on compiling static files
+
+You will need to re-run this command any time you want to deploy changes to the static files in your project, including the React code. To do this, you need to delete the existing `build` folder and rebuild it.
+
+This command will delete the old folder and replace it with the new one: 
+
+```bash
+npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
+```
 
 # 5. Agile Methodology
 
