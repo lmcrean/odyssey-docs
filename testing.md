@@ -137,12 +137,19 @@ sudo apt-get update
 sudo apt-get install -y xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 npx cypress install
 npx cypress verify
+npx cypress open
 ```
 
 3. In the same terminal, run the following command to run the tests:
 
 ```bash
 npm run test:e2e
+```
+
+or to run a specific test, for example `frontend/cypress/e2e/auth.cy.js` you can write something like this:
+
+```bash
+npx cypress run --spec "cypress/e2e/auth.cy.js"
 ```
 
 
