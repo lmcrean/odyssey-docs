@@ -162,6 +162,12 @@ npx playwright install --with-deps
 npx playwright test
 ```
 
+if you want to run a specific test, for example `frontend/playwright/auth.test.js` you can write something like this:
+
+```bash
+npx playwright test playwright/auth.spec.js
+```
+
 # Automated Testing in Backend with python
 
 Tests are located in the `tests` subfolders, each nested in the relevant app folder. To run the tests, use the following command:
