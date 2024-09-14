@@ -150,6 +150,7 @@ or to run a specific test, for example `frontend/cypress/e2e/auth.cy.js` you can
 
 ```bash
 npx cypress run --spec "cypress/e2e/auth.cy.js"
+npx cypress run --spec "cypress/e2e/user_journey.cy.js" --headed
 ```
 
 
