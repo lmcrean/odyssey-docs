@@ -1,4 +1,5 @@
-<!-- _navbar.md -->
+<!-- _navbar.md format all the colors to be white-->
+
 
 * [En](/)
 * [chinese](/zh-cn/)
@@ -12,3 +13,10 @@
   * [FAQ](/docs/faq.md)
   * [Migration](/docs/migration.md)
   * [Changelog](/docs/changelog.md)
+
+<style>
+  .sidebar-nav a,
+  .app-nav a {
+    color: white !important;
+  }
+</style>

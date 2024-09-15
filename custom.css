@@ -1,0 +1,13 @@
+.app-nav a {
+    color: white !important;
+  }
+  
+  .app-nav a:hover {
+    color: #42b983 !important; /* Or any color you prefer for hover state */
+  }
+
+
+  .app-nav {
+    background-color: #13202d; 
+    padding: 10px 0;
+  }
