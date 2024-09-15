@@ -1,13 +1,34 @@
-.app-nav a {
+/* Make the navbar sticky */
+.app-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Or any color that matches your theme */
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  }
+  
+  /* Adjust the main content to prevent overlap */
+  .content {
+    padding-top: 60px; /* Adjust this value based on your navbar height */
+  }
+  
+  /* Style for the navbar links (as requested earlier) */
+  .app-nav a {
     color: white !important;
   }
   
   .app-nav a:hover {
-    color: #42b983 !important; /* Or any color you prefer for hover state */
+    color: #42b983 !important;
+  }
+  
+  /* If you want to change the background color of the navbar */
+  .app-nav {
+    background-color: #34495e; /* Or any color you prefer */
   }
 
-
-  .app-nav {
-    background-color: #13202d; 
-    padding: 10px 0;
+  @media screen and (max-width: 768px) {
+    .content {
+      padding-top: 20px; /* Reduce padding on mobile */
+    }
   }
