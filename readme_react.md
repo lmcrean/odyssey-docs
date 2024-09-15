@@ -16,9 +16,7 @@ The documentation is split into two parts: the frontend and the backend.
 
 This Readme Documents the Frontend of the Odyssey Messaging App. 
 
-The Backend is documented in the [Odyssey API Readme]($$$$$$$$$$$).
-
-
+The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean/odyssey-api$$$$$$$$$$$).
 
 ---
 
@@ -26,23 +24,13 @@ The Backend is documented in the [Odyssey API Readme]($$$$$$$$$$$).
 
 **[Live Project](https://odyssey-frontend-1fed9e7a199c.herokuapp.com/)**  *---*  **[Live API](https://odyssey-api-f3455553b29d.herokuapp.com/)**  
 
-**[Frontend Repository & Readme (you are here)](https://github.com/lmcrean/odyssey-react)**  *---*  **[API Repository & Readme](https://github.com/lmcrean/odyssey-api)**  *---* **Agile Methodology Readme**
+**[Frontend Repository & Readme (you are here)](https://github.com/lmcrean/odyssey-react)**  *---*  **[API Repository & Readme](https://github.com/lmcrean/odyssey-api)**  *---* **[Agile Methodology Readme](https://github.com/lmcrean/odyssey-api$$$$$$$$$$$)**
 
 ---
 
 # **Introduction** <!-- omit from toc -->
 
-$$$$$$$$$
-
 </center>
-
-Sections include:
-[1. **Features**](#1-features)
-[2. **User Stories**](#2-2-user-stories)
-[3. **Automatic Testing**](#3-automatic-testing)
-[4. **Installation**](#4-installation)
-[5. **Usage**](#5-usage)
-[6. **Acknowledgement and Credits**](#6-acknowledgement-and-credits)
 
 # Table of Contents <!-- omit from toc -->
 - [1. **Features**](#1-features)
@@ -55,8 +43,14 @@ Sections include:
   - [User Stories (Strategy and Scope Plane)](#user-stories-strategy-and-scope-plane)
   - [Structure of the Application](#structure-of-the-application)
   - [Skeleton](#skeleton)
+    - [UiZard Wireframe](#uizard-wireframe)
     - [Responsive Navbar for Mobile and Desktop](#responsive-navbar-for-mobile-and-desktop)
   - [Surface](#surface)
+    - [NavBar Design](#navbar-design)
+    - [Color Scheme and Typefaces with Root vars](#color-scheme-and-typefaces-with-root-vars)
+    - [Light and Dark Mode with ThemeContext](#light-and-dark-mode-with-themecontext)
+    - [ThemeContext](#themecontext)
+    - [ThemeProvider](#themeprovider)
 - [3. **Automatic Testing**](#3-automatic-testing)
   - [Test Summaries](#test-summaries)
 - [4. **Installation**](#4-installation)
@@ -226,7 +220,22 @@ Authentication was omitted from the diagram for readability. To summarise:
 
 To make the app, `react-bootstrap` was used for an efficient workflow.
 
-Where possible the app was designed
+Where possible the app was designed with a mobile-first approach, ensuring that the app is responsive and accessible across devices.
+
+### UiZard Wireframe
+
+The following UiZard wireframe was used as a starting point for the app's design:
+
+![UiZard Wireframe - Mobile](https://res.cloudinary.com/$$$$$$$$$$$$$$$$$)
+Mobile Design
+
+![UiZard Wireframe](https://res.cloudinary.com/$$$$$$$$$$$$$$$$$)
+Desktop Design
+
+The wireframe shows the basic layout of the app, including the navbar, message list, and message detail components. The final design was based on this wireframe, with additional features and styling added to enhance the user experience.
+
+
+
 
 ### Responsive Navbar for Mobile and Desktop
 
@@ -235,6 +244,137 @@ for the Navbar a desktop and mobile component was created to ensure a seamless e
 ## Surface
 
 Global vars were used to efficently manage the color scheme and typography.
+
+### NavBar Design
+
+Figma was used to create a more detailed wireframe for the app, due to time constraints certain components were focused on.
+
+![](assets/media/2024-09-15-20-42-57.png)
+
+### Color Scheme and Typefaces with Root vars
+
+![](assets/media/2024-09-15-20-44-48.png)
+
+these were used to create a consistent and visually appealing design for the app, as shown in the image the variables stylesheet was used to set the color scheme and typography for the app. This provided an efficient workflow.
+
+### Light and Dark Mode with ThemeContext
+
+Odyssey implements a dynamic theme switching feature using React Context. This system allows for seamless toggling between light and dark modes across the application. Let's dive into how this is implemented.
+
+The theming system is primarily implemented in the `frontend/src/contexts/ThemeContext.js` file. Here's a breakdown of its key components:
+
+### ThemeContext
+
+The `ThemeContext` is created using React's `createContext` function:
+
+```javascript
+export const ThemeContext = createContext();
+```
+
+This context will hold the current theme state and provide a method to toggle it.
+
+### ThemeProvider
+
+The `ThemeProvider` component is responsible for managing the theme state and providing it to the rest of the application:
+
+```javascript
+export const ThemeProvider = ({ children }) => {
+  const [lightMode, setLightMode] = useState(() => {
+    const savedMode = localStorage.getItem('lightMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  const applyTheme = useCallback((isLight) => {
+    const root = document.documentElement;
+
+    if (isLight) {
+      root.style.setProperty('--color-background', '#FFFFFF');
+      root.style.setProperty('--color-secondary-background', '#F0F0F0');
+      root.style.setProperty('--color-primary-text', '#333333');
+      root.style.setProperty('--color-secondary-text', '#666666');
+    } else {
+      root.style.setProperty('--color-background', '#121212');
+      root.style.setProperty('--color-secondary-background', '#1F1F1F');
+      root.style.setProperty('--color-primary-text', '#f0e7e7');
+      root.style.setProperty('--color-secondary-text', '#B3B3B3');
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('lightMode', JSON.stringify(lightMode));
+    applyTheme(lightMode);
+  }, [lightMode, applyTheme]);
+
+  return (
+    <ThemeContext.Provider value={{ lightMode, setLightMode }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+```
+
+Key points:
+- The initial theme state is retrieved from localStorage, defaulting to dark mode if not set.
+- The `applyTheme` function updates CSS custom properties based on the current theme.
+- Theme changes are persisted to localStorage and applied immediately.
+
+**useThemeTransition Hook**
+
+This custom hook provides a way to apply theme transition effects:
+
+```javascript
+export const useThemeTransition = () => {
+  return { 'data-theme-transition': true };
+};
+```
+
+**Theme Application**
+
+The theme is applied using CSS custom properties defined in `frontend/src/styles/themeTransitions.css`:
+
+```css
+[data-theme-transition] {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --color-background: #121212;
+  --color-secondary-background: #1F1F1F;
+  --color-primary-text: #f0e7e7;
+  --color-secondary-text: #B3B3B3;
+}
+```
+
+These CSS variables are dynamically updated by the `applyTheme` function in the `ThemeProvider`.
+
+Components can access and toggle the theme using the `ThemeContext`. For example, in `frontend/src/components/NavBarDesktop.js`:
+
+```javascript
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+
+const NavBarDesktop = () => {
+  const { lightMode, setLightMode } = useContext(ThemeContext);
+
+  const toggleTheme = () => {
+    setLightMode(!lightMode);
+  };
+
+  return (
+    // ... other nav elements ...
+    <button onClick={toggleTheme} className={styles.ThemeToggle}>
+      <FontAwesomeIcon icon={lightMode ? faMoon : faSun} />
+    </button>
+    // ... other nav elements ...
+  );
+};
+```
+
+</details>
+
+This implementation allows for a seamless theme switching experience across the Odyssey application, with the current theme persisting between sessions.
 
 # 3. **Automatic Testing**
 The app includes automatic tests for core components and functionality using testing frameworks like Jest. 
