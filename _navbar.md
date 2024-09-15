@@ -2,13 +2,10 @@
 * [Live Project](http://odyssey.lauriecrean.dev)
 * [Live Project API](http://odyssey.lauriecrean.dev/api/)
 * [GitHub](http://placeholder.com$$$$$$$)
-
-* Readmes:
 * [Frontend](/frontend.md)
 * [API](/api.md)
 * [Testing](/testing.md)
-* [Agile Methodology](/agile-methodology.md)
-
+* [Agile Method](/agile-methodology.md)
   
 <style>
   .sidebar-nav a,
