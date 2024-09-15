@@ -1,19 +1,13 @@
-<!-- _navbar.md format all the colors to be white-->
+<!-- _navbar.md -->
+* [Live Project](http://odyssey.lauriecrean.dev)
+* [Live Project API](http://odyssey.lauriecrean.dev/api/)
 
-
-* [En](/)
-* [chinese](/zh-cn/)
-
-
-* [Docs](/docs/)
-  * [Getting Started](/docs/getting-started.md)
-  * [Configuration](/docs/configuration.md)
-  * [Customization](/docs/customization.md)
-  * [Plugins](/docs/plugins.md)
-  * [FAQ](/docs/faq.md)
-  * [Migration](/docs/migration.md)
-  * [Changelog](/docs/changelog.md)
-
+* [Frontend Readme](/frontend.md)
+* [API Readme](/api.md)
+* [Testing Readme](/testing.md)
+* [Agile Methodology Readme](/agile-methodology.md)
+* [GitHub](http://placeholder.com$$$$$$$)
+  
 <style>
   .sidebar-nav a,
   .app-nav a {
@@ -21,5 +15,8 @@
   }
   .app-nav {
     position: sticky !important;
+    background-color: var(--mono-base);
+    padding: 15px;
+    top: 0px;
   }
 </style>
