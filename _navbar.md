@@ -19,4 +19,7 @@
   .app-nav a {
     color: white !important;
   }
+  .app-nav {
+    position: sticky !important;
+  }
 </style>
