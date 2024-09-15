@@ -1,12 +1,15 @@
 <!-- _navbar.md -->
 * [Live Project](http://odyssey.lauriecrean.dev)
 * [Live Project API](http://odyssey.lauriecrean.dev/api/)
-
-* [Frontend Readme](/frontend.md)
-* [API Readme](/api.md)
-* [Testing Readme](/testing.md)
-* [Agile Methodology Readme](/agile-methodology.md)
 * [GitHub](http://placeholder.com$$$$$$$)
+
+
+Readmes:
+* [Frontend](/frontend.md)
+* [API](/api.md)
+* [Testing](/testing.md)
+* [Agile Methodology](/agile-methodology.md)
+
   
 <style>
   .sidebar-nav a,
