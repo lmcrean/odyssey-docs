@@ -3,8 +3,6 @@
 * [Live Project API](http://odyssey.lauriecrean.dev/api/)
 * [GitHub](http://placeholder.com$$$$$$$)
 
-<br>
-
 * Readmes:
 * [Frontend](/frontend.md)
 * [API](/api.md)

@@ -20,11 +20,7 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
 
 ---
 
-## Quick Links
-
-**[Live Project](https://odyssey-frontend-1fed9e7a199c.herokuapp.com/)**  *---*  **[Live API](https://odyssey-api-f3455553b29d.herokuapp.com/)**  
-
-**[Frontend Repository & Readme (you are here)](https://github.com/lmcrean/odyssey-react)**  *---*  **[API Repository & Readme](https://github.com/lmcrean/odyssey-api)**  *---* **[Agile Methodology Readme](https://github.com/lmcrean/odyssey-api$$$$$$$$$$$)**
+## **[This Readme is best viewed in Docsify](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme_react.md&sidebar=true&browser-tab-title=Odyssey%20Documentation&maxLevel=3&loadNavbar=_navbar.md&name=Odyssey&searchbox=true&subMaxLevel=3&mergeNavbar=true&dark-mode=true&link-color-dark-mode=70b9e0#/)**
 
 ---
 
