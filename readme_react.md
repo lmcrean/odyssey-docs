@@ -114,7 +114,6 @@ The user stories are covered in the Agile Methodology.
 ## 2.2. Structure of the Application
 
 
-
 ```mermaid
 flowchart TD
 subgraph NavbarSignedout["NavbarSignedOut (signed out user)"]
@@ -207,6 +206,8 @@ subgraph NavbarSignedout["NavbarSignedOut (signed out user)"]
     style ProfileSection fill:#FFCDD2,color:#000000
     style PopularProfiles fill:#FFCDD2,color:#000000
 ```
+
+
 Website Navigation for signed in user
 
 Purple indicates that the user can EDIT or DELETE the content, providing they are the owner.
