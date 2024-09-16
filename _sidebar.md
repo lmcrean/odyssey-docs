@@ -3,4 +3,4 @@
 * [Frontend](/readme_react.md) 
 * [API](/readme_api.md) 
 * [Testing](/testing.md)
-* [Agile Method](/agile-method.md)
+* [Agile Method](/agile_method.md)
