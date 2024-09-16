@@ -17,25 +17,6 @@
         name: '',
         repo: '',
         loadSidebar: true,  <!-- Enable sidebar -->
-        plugins: [
-          function(hook, vm) {
-            // Initialize dark mode plugin
-            hook.doneEach(function() {
-              docsifyDarkMode({
-                bottom: '64px',   // Position of the dark mode toggle button
-                right: '32px',
-                dark: {
-                  background: '#1d1f21', // Background color in dark mode
-                  toggleText: 'Switch to Light Mode' // Toggle text for dark mode
-                },
-                light: {
-                  background: '#ffffff', // Background color in light mode
-                  toggleText: 'Switch to Dark Mode'  // Toggle text for light mode
-                }
-              });
-            });
-          }
-        ]
       }
     </script>
   
