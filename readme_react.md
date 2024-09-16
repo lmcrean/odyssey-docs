@@ -20,7 +20,7 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
 
 ---
 
-## 0.1. **[This Readme is best viewed in Docsify](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme_react.md&sidebar=true&browser-tab-title=Odyssey%20Documentation&maxLevel=3&loadNavbar=_navbar.md&name=Odyssey&searchbox=true&subMaxLevel=3&mergeNavbar=true&dark-mode=true&link-color-dark-mode=70b9e0#/)**
+**[This Readme is best viewed in Docsify](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme_react.md&sidebar=true&browser-tab-title=Odyssey&loadSidebar=_sidebar.md&searchbox=true&subMaxLevel=3&page-title=Odyssey&dark-mode=true&link-color-dark-mode=70b9e0#/)**
 
 ---
 
