@@ -176,3 +176,9 @@ Tests are located in the `tests` subfolders, each nested in the relevant app fol
 ```bash
 python3 manage.py test
 ```
+
+Before Starting the tests the following needs to be uncommented in `env.py file`:
+
+```python
+os.environ['DEV'] = '1' # Uncomment the following line to enable development mode
+```

@@ -18,8 +18,7 @@
 - [2. **User Experience**](#2-user-experience)
   - [2.1. User Stories (Strategy and Scope Plane)](#21-user-stories-strategy-and-scope-plane)
   - [2.2. Structure of the Application](#22-structure-of-the-application)
-    - [Inputs and Validation](#inputs-and-validation)
-    - [Inputs and Validation](#inputs-and-validation-1)
+    - [2.2.1. Inputs and Validation](#221-inputs-and-validation)
   - [2.3. Skeleton](#23-skeleton)
     - [2.3.1. UiZard Wireframe](#231-uizard-wireframe)
     - [2.3.2. Responsive Navbar for Mobile and Desktop](#232-responsive-navbar-for-mobile-and-desktop)
@@ -61,10 +60,10 @@
 - [7. **Acknowledgement and Credits**](#7-acknowledgement-and-credits)
   - [7.1. Code Institute Moments app as boilerplate](#71-code-institute-moments-app-as-boilerplate)
   - [7.2. Code institute Repo unification tutorial](#72-code-institute-repo-unification-tutorial)
-  - [7.2. Libraries](#72-libraries)
-  - [7.3. Broader Software used](#73-broader-software-used)
-  - [7.4. Use of LLMs](#74-use-of-llms)
-  - [7.5. Personal Acknowledgements](#75-personal-acknowledgements)
+  - [7.3. Libraries](#73-libraries)
+  - [7.4. Broader Software used](#74-broader-software-used)
+  - [7.5. Use of LLMs](#75-use-of-llms)
+  - [7.6. Personal Acknowledgements](#76-personal-acknowledgements)
 - [8. License](#8-license)
 
 ---
@@ -220,13 +219,12 @@ Authentication was omitted from the diagram for readability. To summarise:
   - cannot see options for like or follow
   - cannot create or edit a post
 
-### Inputs and Validation
-### Inputs and Validation
+### 2.2.1. Inputs and Validation
 
 | Feature | Input Fields | Frontend Validation | Backend Validation |
 |---------|--------------|---------------------|---------------------|
-| Sign Up | - Username (required)<br>- Password (required)<br>- Password confirmation (required) | File: `frontend/src/pages/auth/SignUpForm.js`<br>- Checks for field completion<br>- Displays server-side errors | Files: `drf_api/settings.py`, `drf_api/serializers.py`<br>- Uses default dj-rest-auth registration<br>- Creates profile via signal in drf_api app<br>- Django's default password validators apply |
-| Sign In | - Username (required)<br>- Password (required) | File: `frontend/src/pages/auth/SignInForm.js`<br>- Checks for field completion<br>- Handles authentication errors | File: `drf_api/urls.py`<br>- Uses dj-rest-auth for login<br>- Authenticates credentials against the database |
+| Sign Up | - Username (required)<br>- Password (required)<br>- Password confirmation (required) | File: `frontend/src/pages/auth/SignUpForm.js`<br>- Checks for field completion<br>- Displays server-side errors <br>- Field may not be blank <br> -Username cannot contain spaces <br> - displays Bootstrap Alerts such as `{errors.non_field_errors?.map((message, idx) => ( <Alert key={idx} > {message} </Alert> ))}` | Files: `drf_api/settings.py`, `drf_api/serializers.py`<br>- Uses default dj-rest-auth registration validators with `AUTH_PASSWORD_VALIDATORS`<br>- Creates profile via signal in drf_api app<br>- Django's default password validators apply, quoted here from docs: <br><br> - **UserAttributeSimilarityValidator**: Checks the similarity between the password and a set of attributes of the user.<br>- **MinimumLengthValidator**: Checks whether the password meets a minimum length. This validator is configured with a custom option: it now requires the minimum length to be nine characters, instead of the default eight.<br>- **CommonPasswordValidator**: Checks whether the password occurs in a list of common passwords. By default, it compares to an included list of 20,000 common passwords.<br>- **NumericPasswordValidator**: Checks whether the password isn’t entirely numeric.|
+| Sign In | - Username (required)<br>- Password (required) | File: `frontend/src/pages/auth/SignInForm.js`<br>- Checks for field completion<br>- Handles authentication errors that may arise from `dj-rest-auth` in the API | File: `drf_api/urls.py`<br>- Uses dj-rest-auth for login<br>-`dj-rest-auth` framework uses Django's [`authenticate()` method](https://docs.djangoproject.com/en/5.1/topics/auth/default/#django.contrib.auth.authenticate) to ensure username and password match the database.
 | Create Post | - Title (required)<br>- Content (optional)<br>- Image (optional) | File: `frontend/src/pages/posts/PostCreateForm.js`<br>- Checks title is not empty<br>- Client-side image preview | Files: `posts/serializers.py`, `posts/models.py`<br>- Validates image size (max 2MB) and dimensions (max 4096px in width or height)<br>- Handles image upload to Cloudinary<br>- Uses function to get default image if none provided |
 | Send Message | - Content (required for text)<br>- Image (optional) | File: `frontend/src/pages/messaging/MessageDetailSendForm.js`<br>- Ensures content or image is present<br>- Handles image upload | Files: `messaging/views/message_detail_send_view.py`, `messaging/serializers.py`<br>- Validates message creation and recipient existence<br>- Validates content is not blank when no image<br>- Validates image upload (max 5MB, file type) |
 | Update Profile | - Name (optional)<br>- Content/Bio (optional)<br>- Image (optional) | File: `frontend/src/pages/profiles/ProfileEditForm.js`<br>- Handles image upload and preview | File: `profiles/serializers.py`<br>- Validates image upload to Cloudinary<br>- No explicit validation on name and content fields |
@@ -607,7 +605,7 @@ A key issue with the project was authnetication not working on Safari browsers, 
 
 - [Code Institute](https://codeinstitute.net/) provided a tutorial on how to unify the repositories, which was used to fix the issue.
 
-## 7.2. Libraries
+## 7.3. Libraries
 
 Below is a table listing the key dependencies and devDependencies used in this project, along with brief descriptions and links to the documentation that may have been refered.
 
@@ -634,7 +632,7 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **msw==^0.35.0**                                              | [msw](https://www.npmjs.com/package/msw) is a mocking library for intercepting network requests during testing.                                                       |
 
 
-## 7.3. Broader Software used
+## 7.4. Broader Software used
 
 | Software & Version | Description                                                                                   |
 |--------------------|-----------------------------------------------------------------------------------------------|
@@ -649,7 +647,7 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **PostgreSQL**     | [PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system. |
 | **Gitpod**         | [Gitpod](https://www.gitpod.io/) is an online IDE that provides a fully equipped workspace for development. |
 
-## 7.4. Use of LLMs
+## 7.5. Use of LLMs
 
 LLMs were used as an AI tool to generate initial drafts which would be meticulously reviewed.
 
@@ -665,7 +663,7 @@ The following tools were used to generate such drafts:
 - [Claude Sonnet 3.5](http://www.claude.ai/), eventually replacing the use of [GPT-4o](http://www.chatgpt.com/) with it's higher context window of 200,000 tokens.
 - [Github Copilot](http://www.github.com/copilot) for inline editing suggestions.
 
-## 7.5. Personal Acknowledgements
+## 7.6. Personal Acknowledgements
 
 I would like to thank the following people for their support and guidance throughout the development of this project:
 
