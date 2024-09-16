@@ -77,11 +77,12 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
   - [5.1. Note on compiling static files](#51-note-on-compiling-static-files)
 - [6. Agile Methodology](#6-agile-methodology)
 - [7. **Acknowledgement and Credits**](#7-acknowledgement-and-credits)
-  - [7.1. Moments app as boilerplate](#71-moments-app-as-boilerplate)
+  - [7.1. Code Institute Moments app as boilerplate](#71-code-institute-moments-app-as-boilerplate)
+  - [7.2. Code institute Repo unification tutorial](#72-code-institute-repo-unification-tutorial)
   - [7.2. Libraries](#72-libraries)
   - [7.3. Broader Software used](#73-broader-software-used)
   - [7.4. Use of LLMs](#74-use-of-llms)
-  - [7.5. 6.4 Personal Acknowledgements](#75-64-personal-acknowledgements)
+  - [7.5. Personal Acknowledgements](#75-personal-acknowledgements)
 - [8. License](#8-license)
 
 ---
@@ -594,15 +595,21 @@ As seperate Readme file is created to cover the Agile Methodology.
 
 # 7. **Acknowledgement and Credits**
 
-## 7.1. Moments app as boilerplate
+## 7.1. Code Institute Moments app as boilerplate
 
 "Moments" was used as a boilerplate for the project as it contained the necessary features for a social media platform. Both the API and the React frontend were built from this code.
   - Frontend: https://github.com/Code-Institute-Solutions/moments
   - API:  https://github.com/Code-Institute-Solutions/drf-api
 
+## 7.2. Code institute Repo unification tutorial
+
+A key issue with the project was authnetication not working on Safari browsers, due to having seperate repositories with the frontend and API. 
+
+- [Code Institute](https://codeinstitute.net/) provided a tutorial on how to unify the repositories, which was used to fix the issue.
+
 ## 7.2. Libraries
 
-Below is a table listing the key dependencies and devDependencies used in this project, along with brief descriptions and links to more information.
+Below is a table listing the key dependencies and devDependencies used in this project, along with brief descriptions and links to the documentation that may have been refered.
 
 | Dependency & Version                                          | Description                                                                                                                                                          |
 |---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -644,19 +651,24 @@ Below is a table listing the key dependencies and devDependencies used in this p
 
 ## 7.4. Use of LLMs
 
-GPT-4o and Claude Sonnet 3.5 were used as an AI tool to generate initial drafts which would be meticulously reviewed.
+LLMs were used as an AI tool to generate initial drafts which would be meticulously reviewed.
 
 - writing detailed commit messages
-- automatic testing with Python and Jest
-- implementation of new features
+- implementation of new features in Javascript, CSS or Python
+- drafting readme documentation
+- it could be assumed that any file or commit message might have started as an LLM draft which was extensively tested and reviewed.
 
-Commit messages tended to be 95% accurate.
+The limits of LLMs tended to be that they could not generate test-proof code.
 
-Writing code tended to be anywhere between 50% and 70% accurate, and would require extensive revision with help, gradually moving into fully manual writing.
+The following tools were used to generate such drafts:
 
+- [Claude Sonnet 3.5](http://www.claude.ai/), eventually replacing the use of [GPT-4o](http://www.chatgpt.com/) with it's higher context window of 200,000 tokens.
+- [Github Copilot](http://www.github.com/copilot) for inline editing suggestions.
 
-## 7.5. 6.4 Personal Acknowledgements
+## 7.5. Personal Acknowledgements
+
+I would like to thank the following people for their support and guidance throughout the development of this project:
 
 # 8. License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE$$$$$$) file for details.
