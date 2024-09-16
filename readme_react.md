@@ -39,6 +39,7 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
   - [2.1. User Stories (Strategy and Scope Plane)](#21-user-stories-strategy-and-scope-plane)
   - [2.2. Structure of the Application](#22-structure-of-the-application)
     - [Inputs and Validation](#inputs-and-validation)
+    - [Inputs and Validation](#inputs-and-validation-1)
   - [2.3. Skeleton](#23-skeleton)
     - [2.3.1. UiZard Wireframe](#231-uizard-wireframe)
     - [2.3.2. Responsive Navbar for Mobile and Desktop](#232-responsive-navbar-for-mobile-and-desktop)
@@ -239,18 +240,19 @@ Authentication was omitted from the diagram for readability. To summarise:
   - cannot create or edit a post
 
 ### Inputs and Validation
+### Inputs and Validation
 
 | Feature | Input Fields | Frontend Validation | Backend Validation |
 |---------|--------------|---------------------|---------------------|
-| Sign Up | - Username (required)<br>- Password (required)<br>- Confirm Password | File: `frontend/src/pages/auth/SignUpForm.js`<br>- Client-side checks for field completion<br>- Ensures passwords match | File: `drf_api/users/serializers.py`<br>- Checks username uniqueness<br>- Validates password strength |
-| Sign In | - Username (required)<br>- Password (required) | File: `frontend/src/pages/auth/SignInForm.js`<br>- Checks for field completion | File: `drf_api/users/views.py`<br>- Authenticates credentials against database |
-| Create Post | - Title (required)<br>- Content (optional)<br>- Image (optional) | File: `frontend/src/pages/posts/PostCreateForm.js`<br>- Checks title is not empty<br>- Client-side image size check | File: `drf_api/posts/serializers.py`<br>- Validates title length (max 255 chars)<br>- Checks image size (max 2MB) and dimensions (max 4096x4096) |
-| Send Message | - Content (required for text)<br>- Image (optional) | File: `frontend/src/pages/messaging/MessageDetailSendForm.js`<br>- Ensures content or image is present | File: `drf_api/messaging/serializers.py`<br>- Validates image size (max 5MB)<br>- Checks image file validity |
-| Update Profile | - Name (optional)<br>- Content/Bio (optional)<br>- Image (optional) | File: `frontend/src/pages/profiles/ProfileEditForm.js`<br>- Client-side image format check | File: `drf_api/profiles/serializers.py`<br>- Validates name length<br>- Handles default image if not provided |
-| Like/Unlike Post | - No input (toggle action) | File: `frontend/src/pages/posts/Post.js`<br>- UI toggle for like/unlike | File: `drf_api/likes/views.py`<br>- Prevents liking own post<br>- Handles unique constraint |
-| Follow/Unfollow User | - No input (toggle action) | File: `frontend/src/pages/profiles/Profile.js`<br>- UI toggle for follow/unfollow | File: `drf_api/followers/views.py`<br>- Prevents following self<br>- Manages unique follower relationship |
-| Update Username | - New Username (required) | File: `frontend/src/pages/profiles/UsernameForm.js`<br>- Checks new username is not empty | File: `drf_api/users/views.py`<br>- Verifies username uniqueness |
-| Update Password | - Current Password (required)<br>- New Password (required)<br>- Confirm New Password | File: `frontend/src/pages/profiles/UserPasswordForm.js`<br>- Ensures all fields are filled<br>- Checks new passwords match | File: `drf_api/users/views.py`<br>- Authenticates current password<br>- Validates new password strength |
+| Sign Up | - Username (required)<br>- Password (required)<br>- Password confirmation (required) | File: `frontend/src/pages/auth/SignUpForm.js`<br>- Checks for field completion<br>- Displays server-side errors | Files: `drf_api/settings.py`, `drf_api/serializers.py`<br>- Uses default dj-rest-auth registration<br>- Creates profile via signal in drf_api app<br>- Django's default password validators apply |
+| Sign In | - Username (required)<br>- Password (required) | File: `frontend/src/pages/auth/SignInForm.js`<br>- Checks for field completion<br>- Handles authentication errors | File: `drf_api/urls.py`<br>- Uses dj-rest-auth for login<br>- Authenticates credentials against the database |
+| Create Post | - Title (required)<br>- Content (optional)<br>- Image (optional) | File: `frontend/src/pages/posts/PostCreateForm.js`<br>- Checks title is not empty<br>- Client-side image preview | Files: `posts/serializers.py`, `posts/models.py`<br>- Validates image size (max 2MB) and dimensions (max 4096px in width or height)<br>- Handles image upload to Cloudinary<br>- Uses function to get default image if none provided |
+| Send Message | - Content (required for text)<br>- Image (optional) | File: `frontend/src/pages/messaging/MessageDetailSendForm.js`<br>- Ensures content or image is present<br>- Handles image upload | Files: `messaging/views/message_detail_send_view.py`, `messaging/serializers.py`<br>- Validates message creation and recipient existence<br>- Validates content is not blank when no image<br>- Validates image upload (max 5MB, file type) |
+| Update Profile | - Name (optional)<br>- Content/Bio (optional)<br>- Image (optional) | File: `frontend/src/pages/profiles/ProfileEditForm.js`<br>- Handles image upload and preview | File: `profiles/serializers.py`<br>- Validates image upload to Cloudinary<br>- No explicit validation on name and content fields |
+| Like/Unlike Post | - No input (toggle action) | File: `frontend/src/pages/posts/Post.js`<br>- UI toggle for like/unlike<br>- Updates like count | Files: `likes/models.py`, `likes/serializers.py`, `likes/views.py`<br>- Ensures uniqueness with `unique_together` in model<br>- `LikeSerializer` handles uniqueness in create method<br>- Handles creation and deletion of Like objects |
+| Follow/Unfollow User | - No input (toggle action) | File: `frontend/src/pages/profiles/Profile.js`<br>- UI toggle for follow/unfollow | Files: `followers/models.py`, `followers/serializers.py`, `followers/views.py`<br>- Ensures uniqueness with `unique_together` in model<br>- `FollowerSerializer` handles uniqueness in create method<br>- Manages Follower object creation and deletion |
+| Update Username | - New Username (required) | File: `frontend/src/pages/profiles/UsernameForm.js`<br>- Checks new username is not empty<br>- Displays server-side errors | File: `drf_api/urls.py`<br>- Uses dj-rest-auth for username update<br>- Django's built-in uniqueness validation applies |
+| Update Password | - Current Password (required)<br>- New Password (required)<br>- Confirm New Password | File: `frontend/src/pages/profiles/UserPasswordForm.js`<br>- Ensures all fields are filled<br>- Checks new passwords match | File: `drf_api/urls.py`<br>- Uses dj-rest-auth for password change<br>- Django's built-in password validators apply |
 
 Both frontend and backend implement validation to ensure data integrity and security. The frontend provides immediate feedback to users, while the backend performs thorough checks before processing the data. Error messages from the server are caught by the frontend and displayed to the user for a seamless experience.
 
