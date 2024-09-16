@@ -20,7 +20,7 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
 
 ---
 
-## **[This Readme is best viewed in Docsify](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme_react.md&sidebar=true&browser-tab-title=Odyssey%20Documentation&maxLevel=3&loadNavbar=_navbar.md&name=Odyssey&searchbox=true&subMaxLevel=3&mergeNavbar=true&dark-mode=true&link-color-dark-mode=70b9e0#/)**
+## 0.1. **[This Readme is best viewed in Docsify](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme_react.md&sidebar=true&browser-tab-title=Odyssey%20Documentation&maxLevel=3&loadNavbar=_navbar.md&name=Odyssey&searchbox=true&subMaxLevel=3&mergeNavbar=true&dark-mode=true&link-color-dark-mode=70b9e0#/)**
 
 ---
 
@@ -36,29 +36,53 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
   - [1.4. Profiles](#14-profiles)
   - [1.5. Follows and Likes](#15-follows-and-likes)
 - [2. **User Experience**](#2-user-experience)
-  - [User Stories (Strategy and Scope Plane)](#user-stories-strategy-and-scope-plane)
-  - [Structure of the Application](#structure-of-the-application)
-  - [Skeleton](#skeleton)
-    - [UiZard Wireframe](#uizard-wireframe)
-    - [Responsive Navbar for Mobile and Desktop](#responsive-navbar-for-mobile-and-desktop)
-  - [Surface](#surface)
-    - [NavBar Design](#navbar-design)
-    - [Color Scheme and Typefaces with Root vars](#color-scheme-and-typefaces-with-root-vars)
-    - [Light and Dark Mode with ThemeContext](#light-and-dark-mode-with-themecontext)
-    - [ThemeContext](#themecontext)
-    - [ThemeProvider](#themeprovider)
-- [3. **Automatic Testing**](#3-automatic-testing)
-  - [Test Summaries](#test-summaries)
-- [4. **Installation**](#4-installation)
-  - [Note on compiling static files](#note-on-compiling-static-files)
-- [5. Agile Methodology](#5-agile-methodology)
-- [6. **Acknowledgement and Credits**](#6-acknowledgement-and-credits)
-  - [6.1. Moments app as boilerplate](#61-moments-app-as-boilerplate)
-  - [6.3. Libraries](#63-libraries)
-  - [Broader Software used](#broader-software-used)
-  - [6.4. Use of LLMs](#64-use-of-llms)
-  - [6.4 Personal Acknowledgements](#64-personal-acknowledgements)
-- [7. License](#7-license)
+  - [2.1. User Stories (Strategy and Scope Plane)](#21-user-stories-strategy-and-scope-plane)
+  - [2.2. Structure of the Application](#22-structure-of-the-application)
+  - [2.3. Skeleton](#23-skeleton)
+    - [2.3.1. UiZard Wireframe](#231-uizard-wireframe)
+    - [2.3.2. Responsive Navbar for Mobile and Desktop](#232-responsive-navbar-for-mobile-and-desktop)
+  - [2.4. Surface](#24-surface)
+    - [2.4.1. NavBar Design](#241-navbar-design)
+    - [2.4.2. Color Scheme and Typefaces with Root vars](#242-color-scheme-and-typefaces-with-root-vars)
+    - [2.4.3. Light and Dark Mode with ThemeContext](#243-light-and-dark-mode-with-themecontext)
+    - [2.4.4. ThemeContext](#244-themecontext)
+    - [2.4.5. ThemeProvider](#245-themeprovider)
+- [3. Frontend Directory Structure](#3-frontend-directory-structure)
+  - [3.1. `frontend/cypress/`](#31-frontendcypress)
+  - [3.2. `frontend/node_modules/`](#32-frontendnode_modules)
+  - [3.3. `frontend/playwright/`](#33-frontendplaywright)
+  - [3.4. `frontend/public/`](#34-frontendpublic)
+  - [3.5. `frontend/screenshots/`](#35-frontendscreenshots)
+  - [3.6. `frontend/src/`](#36-frontendsrc)
+    - [3.6.1. `frontend/src/api/`](#361-frontendsrcapi)
+    - [3.6.2. `frontend/src/assets/`](#362-frontendsrcassets)
+    - [3.6.3. `frontend/src/components/`](#363-frontendsrccomponents)
+    - [3.6.4. `frontend/src/contexts/`](#364-frontendsrccontexts)
+    - [3.6.5. `frontend/src/fonts/`](#365-frontendsrcfonts)
+    - [3.6.6. `frontend/src/hooks/`](#366-frontendsrchooks)
+    - [3.6.7. `frontend/src/mocks/`](#367-frontendsrcmocks)
+    - [3.6.8. `frontend/src/pages/`](#368-frontendsrcpages)
+      - [3.6.8.1. `frontend/src/pages/auth/`](#3681-frontendsrcpagesauth)
+      - [3.6.8.2. `frontend/src/pages/comments/`](#3682-frontendsrcpagescomments)
+      - [3.6.8.3. `frontend/src/pages/messaging/`](#3683-frontendsrcpagesmessaging)
+      - [3.6.8.4. `frontend/src/pages/posts/`](#3684-frontendsrcpagesposts)
+      - [3.6.8.5. `frontend/src/pages/profiles/`](#3685-frontendsrcpagesprofiles)
+    - [3.6.9. `frontend/src/styles/`](#369-frontendsrcstyles)
+      - [3.6.9.1. `frontend/src/styles/modules/`](#3691-frontendsrcstylesmodules)
+    - [3.6.10. `frontend/src/utils/`](#3610-frontendsrcutils)
+  - [3.7. `frontend/test-results/`](#37-frontendtest-results)
+- [4. **Automatic Testing**](#4-automatic-testing)
+  - [4.1. Test Summaries](#41-test-summaries)
+- [5. **Installation**](#5-installation)
+  - [5.1. Note on compiling static files](#51-note-on-compiling-static-files)
+- [6. Agile Methodology](#6-agile-methodology)
+- [7. **Acknowledgement and Credits**](#7-acknowledgement-and-credits)
+  - [7.1. Moments app as boilerplate](#71-moments-app-as-boilerplate)
+  - [7.2. Libraries](#72-libraries)
+  - [7.3. Broader Software used](#73-broader-software-used)
+  - [7.4. Use of LLMs](#74-use-of-llms)
+  - [7.5. 6.4 Personal Acknowledgements](#75-64-personal-acknowledgements)
+- [8. License](#8-license)
 
 ---
 
@@ -95,7 +119,7 @@ The Backend is documented in the [Odyssey API Readme](https://github.com/lmcrean
 
 # 2. **User Experience**
 
-## User Stories (Strategy and Scope Plane)
+## 2.1. User Stories (Strategy and Scope Plane)
 The user stories are covered in the Agile Methodology.
 
 - **As a user**, I can sign up and log into the app to access my personalized messaging dashboard.
@@ -104,7 +128,7 @@ The user stories are covered in the Agile Methodology.
 - **As a user**, I can send and receive messages in real-time within an ongoing conversation.
 - **As a user**, I can view detailed information about a conversation, including its history and any attached media.
 
-## Structure of the Application
+## 2.2. Structure of the Application
 
 
 
@@ -212,13 +236,13 @@ Authentication was omitted from the diagram for readability. To summarise:
   - cannot see options for like or follow
   - cannot create or edit a post
 
-## Skeleton
+## 2.3. Skeleton
 
 To make the app, `react-bootstrap` was used for an efficient workflow.
 
 Where possible the app was designed with a mobile-first approach, ensuring that the app is responsive and accessible across devices.
 
-### UiZard Wireframe
+### 2.3.1. UiZard Wireframe
 
 The following UiZard wireframe was used as a starting point for the app's design:
 
@@ -233,33 +257,33 @@ The wireframe shows the basic layout of the app, including the navbar, message l
 
 
 
-### Responsive Navbar for Mobile and Desktop
+### 2.3.2. Responsive Navbar for Mobile and Desktop
 
 for the Navbar a desktop and mobile component was created to ensure a seamless experience across devices. Then through a hook the Navbar would switch according to screenwidth.
 
-## Surface
+## 2.4. Surface
 
 Global vars were used to efficently manage the color scheme and typography.
 
-### NavBar Design
+### 2.4.1. NavBar Design
 
 Figma was used to create a more detailed wireframe for the app, due to time constraints certain components were focused on.
 
 ![](assets/media/2024-09-15-20-42-57.png)
 
-### Color Scheme and Typefaces with Root vars
+### 2.4.2. Color Scheme and Typefaces with Root vars
 
 ![](assets/media/2024-09-15-20-44-48.png)
 
 these were used to create a consistent and visually appealing design for the app, as shown in the image the variables stylesheet was used to set the color scheme and typography for the app. This provided an efficient workflow.
 
-### Light and Dark Mode with ThemeContext
+### 2.4.3. Light and Dark Mode with ThemeContext
 
 Odyssey implements a dynamic theme switching feature using React Context. This system allows for seamless toggling between light and dark modes across the application. Let's dive into how this is implemented.
 
 The theming system is primarily implemented in the `frontend/src/contexts/ThemeContext.js` file. Here's a breakdown of its key components:
 
-### ThemeContext
+### 2.4.4. ThemeContext
 
 The `ThemeContext` is created using React's `createContext` function:
 
@@ -269,7 +293,7 @@ export const ThemeContext = createContext();
 
 This context will hold the current theme state and provide a method to toggle it.
 
-### ThemeProvider
+### 2.4.5. ThemeProvider
 
 The `ThemeProvider` component is responsible for managing the theme state and providing it to the rest of the application:
 
@@ -372,7 +396,118 @@ const NavBarDesktop = () => {
 
 This implementation allows for a seamless theme switching experience across the Odyssey application, with the current theme persisting between sessions.
 
-# 3. **Automatic Testing**
+# 3. Frontend Directory Structure
+
+The frontend directory structure is designed to organize the React application's codebase effectively. Here's an overview of the key directories and their purposes:
+
+## 3.1. `frontend/cypress/`
+- Contains end-to-end tests using Cypress
+- Includes test specifications like `cypress/e2e/auth.cy.js` for authentication testing
+- Configuration in `cypress.config.js` sets up the testing environment
+
+## 3.2. `frontend/node_modules/`
+- Contains all the npm packages and dependencies installed via `npm install`
+- Managed by `npm`, not typically modified directly
+- Essential for running the application and its development environment
+
+## 3.3. `frontend/playwright/`
+- Houses browser automation and testing scripts using Playwright
+- Includes tests like `playwright/auth.spec.js` for cross-browser authentication testing
+- Configured via `playwright.config.js` for multi-browser support
+
+## 3.4. `frontend/public/`
+- Contains static assets that are publicly accessible
+- Includes `index.html`, `favicon.ico`, and other static resources
+- Files here are served directly without being processed by webpack
+
+## 3.5. `frontend/screenshots/`
+- Stores screenshots taken during automated tests
+- Useful for visual regression testing and debugging
+- Screenshots are typically named based on the test, e.g., `auth-test-failed-1.png`
+
+## 3.6. `frontend/src/`
+The main source code directory for the React application. Contains various subdirectories:
+
+### 3.6.1. `frontend/src/api/`
+- Handles API configurations and defaults
+- `axiosDefaults.js` sets up base URL and default headers for API requests
+
+### 3.6.2. `frontend/src/assets/`
+- Stores static assets like `logo.png` and `upload.png`
+- Includes images and icons used throughout the application
+
+### 3.6.3. `frontend/src/components/`
+- Contains reusable React components
+- Includes components like `Asset.js`, `Avatar.js`, and `NavBar.js`
+- `MoreDropdown.js` provides a reusable dropdown menu component
+
+### 3.6.4. `frontend/src/contexts/`
+Holds React context providers for state management:
+
+- `CurrentUserContext.js`: Manages user authentication state
+- `ProfileDataContext.js`: Handles profile data and follow/unfollow functionality
+- `PostCacheContext.js`: Implements post caching for performance
+- `AnimationLoadingContext.js`: Manages animation loading states
+- `ThemeContext.js`: Controls app-wide theme settings (light/dark mode)
+
+### 3.6.5. `frontend/src/fonts/`
+- Stores custom font files like `Fontspring-DEMO-coresansc65.otf`
+- Ensures consistent typography across the app
+
+### 3.6.6. `frontend/src/hooks/`
+- Contains custom React hooks like `useClickOutsideToggle.js` and `useRedirect.js`
+- `useWindowSize.js` provides responsive design utilities
+
+### 3.6.7. `frontend/src/mocks/`
+- Includes mock data and handlers in `handlers.js` for testing
+- Simulates API responses for consistent testing environments
+
+### 3.6.8. `frontend/src/pages/`
+Contains page components organized by feature:
+
+#### 3.6.8.1. `frontend/src/pages/auth/`
+- `SignInForm.js` and `SignUpForm.js` manage user authentication
+
+#### 3.6.8.2. `frontend/src/pages/comments/`
+- `Comment.js`, `CommentCreateForm.js`, and `CommentEditForm.js` handle comment functionality
+
+#### 3.6.8.3. `frontend/src/pages/messaging/`
+- `Message.js`, `MessageList.js`, `MessageDetail.js` manage the messaging feature
+- `MessageDetailSendForm.js` handles sending new messages
+
+#### 3.6.8.4. `frontend/src/pages/posts/`
+- `Post.js`, `PostCreateForm.js`, `PostEditForm.js` manage post CRUD operations
+- `PostsPage.js` displays the main feed of posts
+
+#### 3.6.8.5. `frontend/src/pages/profiles/`
+- `Profile.js`, `ProfileEditForm.js` handle user profile management
+- `PopularProfiles.js` showcases popular user profiles
+
+### 3.6.9. `frontend/src/styles/`
+- `variables.css` defines global CSS variables for consistent styling
+- `base.css` provides base styles for the app such as fonts, colors and fallbacks
+
+#### 3.6.9.1. `frontend/src/styles/modules/`
+- Houses component-specific CSS module files
+- Examples include:
+  - `Post.module.css` for styling post components
+  - `Profile.module.css` for profile-related styles
+  - `MessageList.module.css` for message list styling
+  - `NavBarDesktop.module.css` and `NavBarMobile.module.css` for responsive navigation styling
+- Each module corresponds to a specific component, enabling scoped styling
+- there is an `animations` folder containing CSS files for custom animations
+- `LikeAnimation.module.css` defines styles for the post liking animation
+
+### 3.6.10. `frontend/src/utils/`
+- `utils.js` contains utility functions like `fetchMoreData` for infinite scrolling
+
+## 3.7. `frontend/test-results/`
+- Stores test results, often in JSON format like `test-results.json`
+- Useful for analyzing test outcomes and generating reports
+
+This structure organizes the frontend code into logical sections, promoting maintainability and scalability. Each directory and file serves a specific purpose in creating a robust React application.
+
+# 4. **Automatic Testing**
 The app includes automatic tests for core components and functionality using testing frameworks like Jest. 
 
 - To run tests, use the following command:
@@ -400,7 +535,7 @@ Ran all test suites.
 
 Here's a summary of the test files and what they cover:
 
-## Test Summaries
+## 4.1. Test Summaries
 | Test File | Description | Key Methodologies |
 |-----------|-------------|-------------------|
 | Message.test.js | - Tests fetching and displaying the sender's username<br>- Checks error handling when fetching username fails<br>- Verifies the opening and closing of the delete modal<br>- Ensures proper rendering of message content and metadata | - Mocking API responses (axios)<br>- Rendering components with React Testing Library<br>- Simulating user interactions (fireEvent)<br>- Asynchronous testing (act, waitFor)<br>- Snapshot testing for UI consistency |
@@ -412,7 +547,7 @@ Here's a summary of the test files and what they cover:
 The most common methodologies used in testing were mocking API calls with `axios` and `jest.mock`, rendering components with `React Testing Library`, simulating user interactions with `fireEvent`, and handling asynchronous testing with `act` and `waitFor`. Asynchronous testing means that the test waits for a certain condition to be met before proceeding, ensuring that the app behaves as expected in real-world scenarios.
 
 
-# 4. **Installation**
+# 5. **Installation**
 
 It would be advisable to use the [Gitpod IDE](http://gitpod.io) for the installation process, as it is pre-configured with the necessary tools and dependencies, especially around `nvm` and linking to the API.
 
@@ -443,7 +578,7 @@ To get the frontend app up and running locally, follow these steps:
    npm start
    ```
 
-## Note on compiling static files
+## 5.1. Note on compiling static files
 
 You will need to re-run this command any time you want to deploy changes to the static files in your project, including the React code. To do this, you need to delete the existing `build` folder and rebuild it.
 
@@ -453,19 +588,19 @@ This command will delete the old folder and replace it with the new one:
 npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
 ```
 
-# 5. Agile Methodology
+# 6. Agile Methodology
 
 As seperate Readme file is created to cover the Agile Methodology. 
 
-# 6. **Acknowledgement and Credits**
+# 7. **Acknowledgement and Credits**
 
-## 6.1. Moments app as boilerplate
+## 7.1. Moments app as boilerplate
 
 "Moments" was used as a boilerplate for the project as it contained the necessary features for a social media platform. Both the API and the React frontend were built from this code.
   - Frontend: https://github.com/Code-Institute-Solutions/moments
   - API:  https://github.com/Code-Institute-Solutions/drf-api
 
-## 6.3. Libraries
+## 7.2. Libraries
 
 Below is a table listing the key dependencies and devDependencies used in this project, along with brief descriptions and links to more information.
 
@@ -492,7 +627,7 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **msw==^0.35.0**                                              | [msw](https://www.npmjs.com/package/msw) is a mocking library for intercepting network requests during testing.                                                       |
 
 
-## Broader Software used
+## 7.3. Broader Software used
 
 | Software & Version | Description                                                                                   |
 |--------------------|-----------------------------------------------------------------------------------------------|
@@ -507,7 +642,7 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **PostgreSQL**     | [PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system. |
 | **Gitpod**         | [Gitpod](https://www.gitpod.io/) is an online IDE that provides a fully equipped workspace for development. |
 
-## 6.4. Use of LLMs
+## 7.4. Use of LLMs
 
 GPT-4o and Claude Sonnet 3.5 were used as an AI tool to generate initial drafts which would be meticulously reviewed.
 
@@ -520,8 +655,8 @@ Commit messages tended to be 95% accurate.
 Writing code tended to be anywhere between 50% and 70% accurate, and would require extensive revision with help, gradually moving into fully manual writing.
 
 
-## 6.4 Personal Acknowledgements
+## 7.5. 6.4 Personal Acknowledgements
 
-# 7. License
+# 8. License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
