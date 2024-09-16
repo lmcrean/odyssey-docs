@@ -1,10 +1,45 @@
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-<link rel="stylesheet" href="custom.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docsify Project</title>
+  
+    <!-- Load Docsify and Dark Mode CSS -->
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.1.6/dist/docsify-dark-mode.min.css">
+  </head>  
 
-<script>
-    window.$docsify = {
-      name: '',
-      repo: '',
-      loadSidebar: true,   <!-- Enables the sidebar -->
-    }
-</script>
+  <body>
+    <div id="app"></div>
+  
+    <!-- Docsify configuration -->
+    <script>
+      window.$docsify = {
+        name: '',
+        repo: '',
+        loadSidebar: true,  <!-- Enable sidebar -->
+        plugins: [
+          function(hook, vm) {
+            // Initialize dark mode plugin
+            hook.doneEach(function() {
+              docsifyDarkMode({
+                bottom: '64px',   // Position of the dark mode toggle button
+                right: '32px',
+                dark: {
+                  background: '#1d1f21', // Background color in dark mode
+                  toggleText: 'Switch to Light Mode' // Toggle text for dark mode
+                },
+                light: {
+                  background: '#ffffff', // Background color in light mode
+                  toggleText: 'Switch to Dark Mode'  // Toggle text for light mode
+                }
+              });
+            });
+          }
+        ]
+      }
+    </script>
+  
+    <!-- Include the dark mode plugin -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.1.6/dist/docsify-dark-mode.min.js"></script>
+  </body>
+  
