@@ -1,0 +1,7 @@
+* [Live Project](http://odyssey.lauriecrean.dev)
+* [Live Project API](http://odyssey.lauriecrean.dev/api/)
+* [GitHub](http://placeholder.com$$$$$$$) 
+* [Frontend](/frontend.md) 
+* [API](/api.md) 
+* [Testing](/testing.md)
+* [Agile Method](/agile-methodology.md)
