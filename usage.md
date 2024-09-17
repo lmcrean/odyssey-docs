@@ -11,34 +11,34 @@ To get the frontend app up and running locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone http://github.com/lmcrean/odyssey_react.git
-   
    ```
-2. **Install dependencies**:
-   Navigate to the `/frontend` directory
+
+2.  Navigate to the `/frontend` directory
    ```bash
    cd frontend
    ```
-   
+
+3. **Install dependencies**:
    install the required dependencies:
 
    ```bash
    npm install
    ```
 
-3. **Install correct node version**:
+4. **Install correct node version**:
    Run the following command to start the React app locally:
 
    ```bash
    nvm install 16
    ```
 
-4. **Run build**:
+5. **Run build**:
    Run the following command to build the React app locally:
    ```bash
    npm run build
    ```
 
-5. **Split the terminal, open the development server**:
+6. **Split the terminal, open the development server**:
    Split the terminal so we can run the API and frontend at the same time
 
    In terminal 1, run the API.
@@ -57,13 +57,15 @@ To get the frontend app up and running locally, follow these steps:
 
 ## 1.1. Committing to Production - Note on compiling static files
 
-You will need to re-run this command any time you want to deploy changes to the static files in your project, including the React code. To do this, you need to delete the existing `build` folder and rebuild it.
 
-This command will delete the old folder and replace it with the new one: 
+This command will delete the old `build` and replace it with the new one: 
 
 ```bash
 npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
 ```
+
+You will need to re-run this command any time you want to deploy changes to the static files in your project, including the React code. To do this, you need to delete the existing `build` folder and rebuild it.
+
 
 # 2. Automated Testing Instructions
 
