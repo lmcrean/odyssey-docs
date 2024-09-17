@@ -169,7 +169,7 @@ The app includes comprehensive test coverage:
 - Comprehensive test coverage
 - Cloudinary integration for image storage
 
-# App Components: Posts, Comments, Likes, Follows, Users, and Profiles
+# Apps Overview
 
 This section provides an overview of the core components of our social media application, excluding the messaging functionality.
 
@@ -310,9 +310,6 @@ Key features:
 - Retrieve profiles by user ID
 - Upload profile images
 
-
-## Profiles
-
 | Aspect | Details |
 |--------|---------|
 | Model | `Profile` in `profiles/models.py`<br>Fields: owner (OneToOneField to User), created_at, updated_at, name, content, image |
@@ -371,38 +368,4 @@ Defined in `profiles/urls.py`:
 |----------|---------|-------------|
 | `profiles/` | GET | List all profiles |
 | `profiles/<int:pk>/` | GET, PUT | Retrieve or update a specific profile |
-
-
-# Libraries and Tools
-
-## Project Dependencies
-
-Below is a list of the key dependencies used in this project, along with brief descriptions and links to more information.
-# Project Dependencies
-
-Below is a table listing the key dependencies used in this project, along with brief descriptions and links to more information.
-
-| Dependency & Version                        | Description                                       |
-|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **asgiref==3.3.4**                          | [asgiref](https://pypi.org/project/asgiref/) is the ASGI reference implementation, providing utilities for building asynchronous web applications in Python.           |
-| **cloudinary==1.41.0**                      | [cloudinary](https://pypi.org/project/cloudinary/) is a Python library that simplifies the integration with Cloudinary, a service for managing media assets.            |
-| **dj-database-url==0.5.0**                  | [dj-database-url](https://pypi.org/project/dj-database-url/) allows you to configure your Django application's database with an environment variable.                  |
-| **dj-rest-auth==2.1.9**                     | [dj-rest-auth](https://pypi.org/project/dj-rest-auth/) provides a set of REST API endpoints for handling authentication in Django Rest Framework.                      |
-| **Django==3.2.4**                           | [Django](https://pypi.org/project/Django/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design.                         |
-| **django-allauth==0.50.0**                  | [django-allauth](https://pypi.org/project/django-allauth/) is an integrated set of Django applications addressing authentication, registration, and social login.       |
-| **django-cloudinary-storage==0.3.0**        | [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) integrates Cloudinary storage for media and static files in Django projects.           |
-| **django-cors-headers==3.7.0**              | [django-cors-headers](https://pypi.org/project/django-cors-headers/) provides Cross-Origin Resource Sharing (CORS) support for Django applications.                    |
-| **django-filter==2.4.0**                    | [django-filter](https://pypi.org/project/django-filter/) simplifies the process of filtering querysets in Django REST Framework.                                       |
-| **djangorestframework==3.12.4**             | [djangorestframework](https://pypi.org/project/djangorestframework/) is a powerful and flexible toolkit for building Web APIs in Django.                               |
-| **djangorestframework-simplejwt==4.7.2**    | [djangorestframework-simplejwt](https://pypi.org/project/djangorestframework-simplejwt/) is a JSON Web Token authentication plugin for Django REST Framework.          |
-| **gunicorn==20.1.0**                        | [gunicorn](https://pypi.org/project/gunicorn/) is a Python WSGI HTTP Server for UNIX, commonly used to serve Django applications.                                      |
-| **oauthlib==3.1.1**                         | [oauthlib](https://pypi.org/project/oauthlib/) is a Python library that provides a framework for implementing OAuth1 and OAuth2.                                       |
-| **Pillow==8.2.0**                           | [Pillow](https://pypi.org/project/Pillow/) is a Python Imaging Library that adds image processing capabilities to your Python interpreter.                             |
-| **psycopg2-binary==2.9.1**                  | [psycopg2-binary](https://pypi.org/project/psycopg2-binary/) is a PostgreSQL adapter for Python, allowing you to connect and work with PostgreSQL databases.            |
-| **PyJWT==2.1.0**                            | [PyJWT](https://pypi.org/project/PyJWT/) is a Python library that allows you to encode and decode JSON Web Tokens (JWT).                                               |
-| **python3-openid==3.2.0**                   | [python3-openid](https://pypi.org/project/python3-openid/) is a Python library for integrating OpenID authentication.                                                  |
-| **pytz==2021.1**                            | [pytz](https://pypi.org/project/pytz/) is a Python library that brings the Olson tz database into Python, allowing for accurate and cross-platform timezone calculations.|
-| **requests-oauthlib==1.3.0**                | [requests-oauthlib](https://pypi.org/project/requests-oauthlib/) provides OAuthlib authentication support for Python’s Requests library.                               |
-| **sqlparse==0.4.1**                         | [sqlparse](https://pypi.org/project/sqlparse/) is a non-validating SQL parser for Python, useful for formatting and parsing SQL statements.                            |
-
 
