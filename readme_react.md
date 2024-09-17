@@ -1,18 +1,14 @@
 <center>
 
-# **Odyssey** <!-- omit from toc -->
-
-This
+# **Frontend Readme** <!-- omit from toc -->
 
 </center>
 
 ---
 
-# 2. **Frontend Readme**
+this readme is loosely structured according to the 5 User Experience Planes.
 
-this readme is structured accor
-
-## 2.1. User Stories (Strategy and Scope Plane)
+## 2.1. Epics and User Stories (Strategy and Scope Plane)
 The user stories are covered in the Agile Methodology.
 
 - **As a user**, I can sign up and log into the app to access my personalized messaging dashboard.
