@@ -1,5 +1,7 @@
 * [Live Project](http://odyssey.lauriecrean.dev)
 * [GitHub](http://github.com/lmcrean/odyssey-api)
+* [Features](/features.md)
+* [File Structure](/file_structure.md)
 * [Frontend](/readme_react.md) 
 * [API](/readme_api.md) 
 * [Testing](/testing.md)

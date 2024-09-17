@@ -1,5 +1,6 @@
+# API Readme
 
-This repo focuses on the API for the social media platform. The API is built using Django Rest Framework.
+This Readme focuses on the API for the social media platform. The API is built using Django Rest Framework.
 
 Anything already mentioned in the documentation of Frontend Repository, such as Agile Methodology, is omitted here for brevity.
 
