@@ -1,23 +1,6 @@
 # 1. Testing
 
-
-`Table of Contents`
-
-- [1. Testing](#1-testing)
-- [2. Manual Testing](#2-manual-testing)
-  - [2.1. Testing the Navbar](#21-testing-the-navbar)
-  - [2.2. Testing the Home Feed](#22-testing-the-home-feed)
-  - [2.3. Testing the Post functionality](#23-testing-the-post-functionality)
-  - [2.4. Testing the Profile Page](#24-testing-the-profile-page)
-  - [2.5. Testing the Messages Page](#25-testing-the-messages-page)
-  - [2.6. Testing the Sign Up Page](#26-testing-the-sign-up-page)
-  - [2.7. Testing the Sign In Page](#27-testing-the-sign-in-page)
-  - [2.8. Popular profiles component](#28-popular-profiles-component)
-  - [2.9. Landing Page](#29-landing-page)
-- [3. Automated Testing in Frontend with Jest, Cypress and Playwright](#3-automated-testing-in-frontend-with-jest-cypress-and-playwright)
-- [5. **Automated Frontend Testing Results**](#5-automated-frontend-testing-results)
-  - [5.1. Jest Summaries](#51-jest-summaries)
-
+The testing process for the Odyssey app involves both manual and automated testing to ensure the functionality and integrity of the application. 
 
 # 2. Manual Testing 
 
@@ -108,7 +91,7 @@ Pass criteria includes no warning messages, no errors.
 
 # 3. Automated Testing in Frontend with Jest, Cypress and Playwright
 
-# 5. **Automated Frontend Testing Results**
+# 5. Automated Frontend Testing Results
 The app includes automatic tests for core components and functionality using testing frameworks like Jest.
 
 - To run tests, use the following command:
