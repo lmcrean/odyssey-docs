@@ -1,5 +1,5 @@
 
-# 1. **Features**
+# 1. Features
 
 ## 1.1. Messaging
 

@@ -1,4 +1,4 @@
-# 5. **Acknowledgement and Credits**
+# 5. Acknowledgement and Credits
 
 ## 5.1. Code Institute Moments app as boilerplate
 
