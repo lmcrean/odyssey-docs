@@ -108,3 +108,132 @@ Contains page components organized by feature:
 - Useful for analyzing test outcomes and generating reports
 
 This structure organizes the frontend code into logical sections, promoting maintainability and scalability. Each directory and file serves a specific purpose in creating a robust React application.
+
+# Backend Directory Structure
+
+## 1. `drf_api/`
+Main project directory for the Django Rest Framework API.
+
+### 1.1. `settings.py`
+Main configuration file for the Django project. Includes database settings, installed apps, middleware, and other core settings.
+
+### 1.2. `urls.py`
+Defines the main URL routing for the entire project, including admin, API endpoints, and authentication URLs.
+
+### 1.3. `views.py`
+Contains custom views for the project, such as the root route view.
+
+### 1.4. `permissions.py`
+Defines custom permissions, like `IsOwnerOrReadOnly`, to control access to various API endpoints.
+
+### 1.5. `serializers.py`
+Contains custom serializers, like `CurrentUserSerializer`, for data transformation between complex types and Python datatypes.
+
+## 2. `comments/`
+Handles the comment functionality for posts, allowing users to interact with content.
+
+### 2.1. `models.py`
+Defines the `Comment` model, representing the structure of a comment in the database.
+
+### 2.2. `views.py`
+Contains views for listing, creating, retrieving, updating, and deleting comments. Includes `CommentList` and `CommentDetail` views.
+
+### 2.3. `serializers.py`
+Defines serializers for comments, including `CommentSerializer` and `CommentDetailSerializer`, to convert comment data between JSON and Python objects.
+
+## 3. `followers/`
+Manages follower relationships between users, enabling social networking features.
+
+### 3.1. `models.py`
+Defines the `Follower` model, representing the follow relationship between users.
+
+### 3.2. `views.py`
+Contains views for listing, creating, retrieving, and deleting follower relationships. Includes `FollowerList` and `FollowerDetail` views.
+
+### 3.3. `serializers.py`
+Defines the `FollowerSerializer` for handling follower data serialization and deserialization.
+
+## 4. `likes/`
+Handles the like functionality for posts, allowing users to express appreciation for content.
+
+### 4.1. `models.py`
+Defines the `Like` model, representing a user's like on a post.
+
+### 4.2. `views.py`
+Contains views for listing, creating, retrieving, and deleting likes. Includes `LikeList` and `LikeDetail` views.
+
+### 4.3. `serializers.py`
+Defines the `LikeSerializer` for processing like data.
+
+## 5. `messaging/`
+Manages the messaging functionality between users, enabling private communication.
+
+### 5.1. `models.py`
+Defines the `Message` model, representing individual messages between users.
+
+### 5.2. `views/`
+Contains separate view files for different message-related operations:
+- `message_list_view.py`: Handles listing of messages.
+- `message_detail_view.py`: Manages retrieving individual message details.
+- `message_detail_send_view.py`: Handles sending new messages.
+- `message_start_new_view.py`: Manages starting new conversations.
+- `message_delete_view.py`: Handles deletion of messages.
+- `chat_delete_view.py`: Manages deletion of entire conversations.
+- `message_update_view.py`: Handles updating of messages.
+
+### 5.3. `serializers.py`
+Defines the `MessageSerializer` for handling message data serialization and deserialization.
+
+### 5.4. `tests/`
+Contains various test files to ensure the reliability of the messaging functionality.
+
+## 6. `posts/`
+Manages the post functionality, which is central to the application, allowing users to share content.
+
+### 6.1. `models.py`
+Defines the `Post` model, representing the structure of a post in the database.
+
+### 6.2. `views/`
+Contains separate view files:
+- `post_list_view.py`: Handles listing and creation of posts.
+- `post_detail_view.py`: Manages retrieval, updating, and deletion of individual posts.
+
+### 6.3. `serializers.py`
+Defines the `PostSerializer` for handling post data serialization and deserialization.
+
+### 6.4. `tests/`
+Contains test files to ensure the reliability of post-related functionality.
+
+## 7. `profiles/`
+Handles user profile management, allowing users to customize their personal information.
+
+### 7.1. `models.py`
+Defines the `Profile` model, representing user profiles in the database.
+
+### 7.2. `views/`
+Contains separate view files:
+- `profile_list_view.py`: Handles listing of user profiles.
+- `profile_detail_view.py`: Manages retrieval and updating of individual profiles.
+- `profile_list_most_followed_view.py`: Handles listing profiles sorted by follower count.
+
+### 7.3. `serializers.py`
+Defines the `ProfileSerializer` for handling profile data serialization and deserialization.
+
+### 7.4. `tests/`
+Contains test files to ensure the reliability of profile-related functionality.
+
+## 8. `users/`
+Manages user-related operations, extending Django's built-in user model functionality.
+
+### 8.1. `views.py`
+Contains views for user operations, including `UserListView` for listing users and `UserDetailView` for retrieving individual user details.
+
+### 8.2. `serializers.py`
+Defines the `UserSerializer` for handling user data serialization and deserialization.
+
+## 9. Root Directory Files
+- `manage.py`: Django's command-line utility for administrative tasks.
+- `requirements.txt`: Lists all Python dependencies required for the project.
+- `Procfile`: Specifies commands for deployment platforms like Heroku.
+
+This structure organizes the backend code into logical sections based on functionality, promoting maintainability and scalability. Each app is responsible for a specific feature of the application, with its own models, views, and serializers, working together to create a comprehensive social media platform API.
