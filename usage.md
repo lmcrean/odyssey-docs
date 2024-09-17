@@ -7,29 +7,51 @@ To get the frontend app up and running locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone http://github.com/lmcrean/odyssey_react.git
+   
    ```
 2. **Install dependencies**:
-   Navigate to the project directory and install the required dependencies:
+   Navigate to the `/frontend` directory
+   ```bash
+   cd frontend
+   ```
+   
+   install the required dependencies:
+
    ```bash
    npm install
    ```
+
 3. **Install correct node version**:
    Run the following command to start the React app locally:
+
    ```bash
    nvm install 16
    ```
+
 4. **Run build**:
    Run the following command to build the React app locally:
    ```bash
    npm run build
    ```
-5. **Start the development server**:
-   Run the following command to start the React app locally:
+
+5. **Split the terminal, open the development server**:
+   Split the terminal so we can run the API and frontend at the same time
+
+   In terminal 1, run the API.
    ```bash
-   npm start
+   python3 manage.py runserver
    ```
 
-## 1.1. Note on compiling static files
+
+   In Terminal 2, go to `/frontend` and open the following command to start the React app locally:
+   ```bash
+   cd frontend
+   npm start
+   ```
+   This should open in port `8080` or something similar - it will contain the latest changes.
+
+
+## 1.1. Committing to Production - Note on compiling static files
 
 You will need to re-run this command any time you want to deploy changes to the static files in your project, including the React code. To do this, you need to delete the existing `build` folder and rebuild it.
 
@@ -38,9 +60,16 @@ This command will delete the old folder and replace it with the new one:
 ```bash
 npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
 ```
-# Automated Testing Instructions
 
-## 3.1. Jest Testing
+# 2. Automated Testing Instructions
+
+First, ensure the frontend is opened with:
+
+```bash
+cd frontend
+```
+
+## 2.1. Jest Testing
 
 Tests are located in the `/__tests__` folder, interspersed throughout the js files in `/frontend` directory. To run the tests, use the following command:
 
@@ -48,7 +77,7 @@ Tests are located in the `/__tests__` folder, interspersed throughout the js fil
 npm run test
 ```
 
-## 3.2. Cypress Testing
+## 2.2. Cypress Testing
 
 Tests are located in the `cypress/integration` folder. To run the tests, use the following command:
 
@@ -67,13 +96,12 @@ sudo apt-get update
 sudo apt-get install -y xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 npx cypress install
 npx cypress verify
-npx cypress open
 ```
 
 3. In the same terminal, run the following command to run the tests:
 
 ```bash
-npm run test:e2e
+npx cypress open
 ```
 
 or to run a specific test, for example `frontend/cypress/e2e/auth.cy.js` you can write something like this:
@@ -84,7 +112,7 @@ npx cypress run --spec "cypress/e2e/user_journey.cy.js" --headed
 ```
 
 
-## 3.3. Playwright Testing
+## 2.3. Playwright Testing
 
 Tests are located in the `playwright` folder. To run the tests, use the following commands:
 
@@ -99,7 +127,7 @@ if you want to run a specific test, for example `frontend/playwright/auth.test.j
 npx playwright test playwright/auth.spec.js
 ```
 
-# 4. Automated Testing in Backend with python
+# 3. Automated Testing in Backend with python
 
 Tests are located in the `tests` subfolders, each nested in the relevant app folder. To run the tests, use the following command:
 
