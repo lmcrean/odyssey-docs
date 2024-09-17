@@ -1,33 +1,29 @@
-# Testing
+# 1. Testing
 
 
 `Table of Contents`
 
-- [Testing](#testing)
-- [Manual Testing](#manual-testing)
-  - [Test 1: Testing the Navbar](#test-1-testing-the-navbar)
-  - [Test 2: Testing the Home Feed](#test-2-testing-the-home-feed)
-  - [Test 3: Testing the Post functionality](#test-3-testing-the-post-functionality)
-  - [Test 4: Testing the Profile Page](#test-4-testing-the-profile-page)
-  - [Test 5: Testing the Messages Page](#test-5-testing-the-messages-page)
-  - [Test 6: Testing the Sign Up Page](#test-6-testing-the-sign-up-page)
-  - [Test 7: Testing the Sign In Page](#test-7-testing-the-sign-in-page)
-  - [Test 8: Popular profiles component](#test-8-popular-profiles-component)
-  - [Test 9: Landing Page](#test-9-landing-page)
-- [Automated Testing in Frontend with Jest, Cypress and Playwright](#automated-testing-in-frontend-with-jest-cypress-and-playwright)
-  - [Jest Testing](#jest-testing)
-  - [Cypress Testing](#cypress-testing)
-  - [Playwright Testing](#playwright-testing)
-- [Automated Testing in Backend with python](#automated-testing-in-backend-with-python)
-- [3. **Automated Frontend Testing Results**](#3-automated-frontend-testing-results)
-  - [3.1. Jest Summaries](#31-jest-summaries)
+- [1. Testing](#1-testing)
+- [2. Manual Testing](#2-manual-testing)
+  - [2.1. Testing the Navbar](#21-testing-the-navbar)
+  - [2.2. Testing the Home Feed](#22-testing-the-home-feed)
+  - [2.3. Testing the Post functionality](#23-testing-the-post-functionality)
+  - [2.4. Testing the Profile Page](#24-testing-the-profile-page)
+  - [2.5. Testing the Messages Page](#25-testing-the-messages-page)
+  - [2.6. Testing the Sign Up Page](#26-testing-the-sign-up-page)
+  - [2.7. Testing the Sign In Page](#27-testing-the-sign-in-page)
+  - [2.8. Popular profiles component](#28-popular-profiles-component)
+  - [2.9. Landing Page](#29-landing-page)
+- [3. Automated Testing in Frontend with Jest, Cypress and Playwright](#3-automated-testing-in-frontend-with-jest-cypress-and-playwright)
+- [5. **Automated Frontend Testing Results**](#5-automated-frontend-testing-results)
+  - [5.1. Jest Summaries](#51-jest-summaries)
 
 
-# Manual Testing 
+# 2. Manual Testing 
 
 Pass criteria includes no warning messages, no errors.
 
-## Test 1: Testing the Navbar
+## 2.1. Testing the Navbar
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -40,7 +36,7 @@ Pass criteria includes no warning messages, no errors.
 | Sign Out | Signed in | User is signed out and redirected to the sign in page | Clicked on the sign out button | User was signed out and redirected to the sign in page | Pass |
 | Responsive Design | Both | Navbar is responsive, will switch between a sidebar and bottom in different views, there must be no breaks particularly around the 768px where the hook activates. | Tested on different screen sizes | Navbar was responsive | Pass |
 
-## Test 2: Testing the Home Feed
+## 2.2. Testing the Home Feed
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -52,7 +48,7 @@ Pass criteria includes no warning messages, no errors.
 | Liked tab | Signed in | Displays posts the user has liked | Clicked on the liked tab | Posts the user has liked were displayed | Pass |
 
 
-## Test 3: Testing the Post functionality
+## 2.3. Testing the Post functionality
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -60,7 +56,7 @@ Pass criteria includes no warning messages, no errors.
 | Edit Post | Signed in | User is able to edit a post | Edited a post | User was able to edit a post | Pass |
 | Delete Post | Signed in | User is able to delete a post | Deleted a post | User was able to delete a post | Pass |
 
-## Test 4: Testing the Profile Page
+## 2.4. Testing the Profile Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -71,7 +67,7 @@ Pass criteria includes no warning messages, no errors.
 | follow user link | Signed in | User is able to follow another user | Followed another user | User was able to follow another user | Pass |
 | message user link | Signed in | User is able to message another user | Messaged another user | User was able to message another user | Pass |
 
-## Test 5: Testing the Messages Page
+## 2.5. Testing the Messages Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -80,21 +76,21 @@ Pass criteria includes no warning messages, no errors.
 | Send Message | Signed in | User is able to send a message | Sent a message | User was able to send a message | Pass |
 | Delete Message | Signed in | User is able to delete a message | Deleted a message | User was able to delete a message | Pass |
 
-## Test 6: Testing the Sign Up Page
+## 2.6. Testing the Sign Up Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Sign Up | Signed out | User is able to sign up | Signed up | User was able to sign up | Pass |
 | Sign Up Validation | Signed out | User is unable to sign up with invalid credentials | Signed up with invalid credentials | User was unable to sign up | Pass |
 
-## Test 7: Testing the Sign In Page
+## 2.7. Testing the Sign In Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Sign In | Signed out | User is able to sign in | Signed in | User was able to sign in | Pass |
 | Sign In Validation | Signed out | User is unable to sign in with invalid credentials | Signed in with invalid credentials | User was unable to sign in | Pass |
 
-## Test 8: Popular profiles component
+## 2.8. Popular profiles component
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -102,7 +98,7 @@ Pass criteria includes no warning messages, no errors.
 | Follow user | Signed in | User is able to follow a popular profile | Followed a popular profile | User was able to follow a popular profile | Pass |
 | Message user | Signed in | User is able to message a popular profile | Messaged a popular profile | User was able to message a popular profile | Pass |
 
-## Test 9: Landing Page
+## 2.9. Landing Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -110,82 +106,9 @@ Pass criteria includes no warning messages, no errors.
 | Sign Up | Signed out | User is able to sign up from the landing page | Signed up from the landing page | User was able to sign up from the landing page | Pass |
 | Sign In | Signed out | User is able to sign in from the landing page | Signed in from the landing page | User was able to sign in from the landing page | Pass |
 
-# Automated Testing in Frontend with Jest, Cypress and Playwright
+# 3. Automated Testing in Frontend with Jest, Cypress and Playwright
 
-## Jest Testing
-
-Tests are located in the `__tests__` folder, interspersed throughout the js files. To run the tests, use the following command:
-
-```bash
-npm run test
-```
-
-## Cypress Testing
-
-Tests are located in the `cypress/integration` folder. To run the tests, use the following command:
-
-1. Open a split terminal, run the following command to start the server:
-
-```bash
-nvm install 16
-npm run build
-npm run start
-```
-
-2. In the other terminal, run the following command to set up cypress:
-
-```bash
-sudo apt-get update
-sudo apt-get install -y xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-npx cypress install
-npx cypress verify
-npx cypress open
-```
-
-3. In the same terminal, run the following command to run the tests:
-
-```bash
-npm run test:e2e
-```
-
-or to run a specific test, for example `frontend/cypress/e2e/auth.cy.js` you can write something like this:
-
-```bash
-npx cypress run --spec "cypress/e2e/auth.cy.js"
-npx cypress run --spec "cypress/e2e/user_journey.cy.js" --headed
-```
-
-
-## Playwright Testing
-
-Tests are located in the `playwright` folder. To run the tests, use the following commands:
-
-```bash
-npx playwright install --with-deps
-npx playwright test
-```
-
-if you want to run a specific test, for example `frontend/playwright/auth.test.js` you can write something like this:
-
-```bash
-npx playwright test playwright/auth.spec.js
-```
-
-# Automated Testing in Backend with python
-
-Tests are located in the `tests` subfolders, each nested in the relevant app folder. To run the tests, use the following command:
-
-```bash
-python3 manage.py test
-```
-
-Before Starting the tests the following needs to be uncommented in `env.py file`:
-
-```python
-os.environ['DEV'] = '1' # Uncomment the following line to enable development mode
-```
-
-# 3. **Automated Frontend Testing Results**
+# 5. **Automated Frontend Testing Results**
 The app includes automatic tests for core components and functionality using testing frameworks like Jest.
 
 - To run tests, use the following command:
@@ -213,7 +136,7 @@ Ran all test suites.
 
 Here's a summary of the test files and what they cover:
 
-## 3.1. Jest Summaries
+## 5.1. Jest Summaries
 | Test File | Description | Key Methodologies |
 |-----------|-------------|-------------------|
 | Message.test.js | - Tests fetching and displaying the sender's username<br>- Checks error handling when fetching username fails<br>- Verifies the opening and closing of the delete modal<br>- Ensures proper rendering of message content and metadata | - Mocking API responses (axios)<br>- Rendering components with React Testing Library<br>- Simulating user interactions (fireEvent)<br>- Asynchronous testing (act, waitFor)<br>- Snapshot testing for UI consistency |

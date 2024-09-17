@@ -1,10 +1,4 @@
-<center>
-
 # **Frontend Readme** <!-- omit from toc -->
-
-</center>
-
----
 
 this readme is loosely structured according to the 5 User Experience Planes.
 

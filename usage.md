@@ -38,4 +38,77 @@ This command will delete the old folder and replace it with the new one:
 ```bash
 npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
 ```
+# Automated Testing Instructions
 
+## 3.1. Jest Testing
+
+Tests are located in the `/__tests__` folder, interspersed throughout the js files in `/frontend` directory. To run the tests, use the following command:
+
+```bash
+npm run test
+```
+
+## 3.2. Cypress Testing
+
+Tests are located in the `cypress/integration` folder. To run the tests, use the following command:
+
+1. Open a split terminal, run the following command to start the server:
+
+```bash
+nvm install 16
+npm run build
+npm run start
+```
+
+2. In the other terminal, run the following command to set up cypress:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+npx cypress install
+npx cypress verify
+npx cypress open
+```
+
+3. In the same terminal, run the following command to run the tests:
+
+```bash
+npm run test:e2e
+```
+
+or to run a specific test, for example `frontend/cypress/e2e/auth.cy.js` you can write something like this:
+
+```bash
+npx cypress run --spec "cypress/e2e/auth.cy.js"
+npx cypress run --spec "cypress/e2e/user_journey.cy.js" --headed
+```
+
+
+## 3.3. Playwright Testing
+
+Tests are located in the `playwright` folder. To run the tests, use the following commands:
+
+```bash
+npx playwright install --with-deps
+npx playwright test
+```
+
+if you want to run a specific test, for example `frontend/playwright/auth.test.js` you can write something like this:
+
+```bash
+npx playwright test playwright/auth.spec.js
+```
+
+# 4. Automated Testing in Backend with python
+
+Tests are located in the `tests` subfolders, each nested in the relevant app folder. To run the tests, use the following command:
+
+```bash
+python3 manage.py test
+```
+
+Before Starting the tests the following needs to be uncommented in `env.py file`:
+
+```python
+os.environ['DEV'] = '1' # Uncomment the following line to enable development mode
+```
