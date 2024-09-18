@@ -15,7 +15,7 @@ Odyssey is a social media application that was build on a unified repository wit
 
 <font color="green">
 
-**[The documentation is best viewed in Docsify using the Sidebar feature to Navigate - click here](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme.md&sidebar=true&browser-tab-title=Odyssey%20Documentation&maxLevel=3&loadSidebar=_sidebar.md&name=Odyssey&searchbox=true&subMaxLevel=3&mergeNavbar=true&dark-mode=true&link-color-dark-mode=70b9e0#/)**
+**[The documentation is best viewed in Docsify using the Sidebar feature to Navigate - click here](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/lmcrean/odyssey-docs/main&homepage=readme_docsify_cover.md&sidebar=true&browser-tab-title=Odyssey%20Documentation&maxLevel=3&loadSidebar=_sidebar.md&name=Odyssey&searchbox=true&subMaxLevel=3&mergeNavbar=true&dark-mode=true&link-color-dark-mode=70b9e0#/)**
 
 </font>
 
