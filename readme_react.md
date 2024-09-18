@@ -155,8 +155,6 @@ Desktop Design
 The wireframe shows the basic layout of the app, including the navbar, message list, and message detail components. The final design was based on this wireframe, with additional features and styling added to enhance the user experience.
 
 
-
-
 ### Responsive Navbar for Mobile and Desktop
 
 for the Navbar a desktop and mobile component was created to ensure a seamless experience across devices. Then through a hook the Navbar would switch according to screenwidth.
