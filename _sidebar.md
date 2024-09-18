@@ -1,5 +1,7 @@
 * [Live Project](http://odyssey.lauriecrean.dev)
-* [GitHub Repository](http://github.com/lmcrean/odyssey-api)
+* [Source Code Repository](http://github.com/lmcrean/odyssey-api)
+
+
 * [Features](/features.md)
 * [Usage Instructions](/usage.md)
 * [File Structure](/file_structure.md)
