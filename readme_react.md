@@ -2,7 +2,7 @@
 
 this readme is loosely structured according to the 5 User Experience Planes.
 
-## 2.1. Epics and User Stories (Strategy and Scope Plane)
+## Epics and User Stories (Strategy and Scope Plane)
 The user stories are covered in the Agile Methodology.
 
 - **As a user**, I can sign up and log into the app to access my personalized messaging dashboard.
@@ -11,7 +11,7 @@ The user stories are covered in the Agile Methodology.
 - **As a user**, I can send and receive messages in real-time within an ongoing conversation.
 - **As a user**, I can view detailed information about a conversation, including its history and any attached media.
 
-## 2.2. Structure of the Application
+## Structure of the Application
 
 
 ```mermaid
@@ -120,7 +120,7 @@ Authentication was omitted from the diagram for readability. To summarise:
   - cannot see options for like or follow
   - cannot create or edit a post
 
-### 2.2.1. Inputs and Validation
+### Inputs and Validation
 
 | Feature | Input Fields | Frontend Validation | Backend Validation |
 |---------|--------------|---------------------|---------------------|
@@ -136,20 +136,20 @@ Authentication was omitted from the diagram for readability. To summarise:
 
 Both frontend and backend implement validation to ensure data integrity and security. The frontend provides immediate feedback to users, while the backend performs thorough checks before processing the data. Error messages from the server are caught by the frontend and displayed to the user for a seamless experience.
 
-## 2.3. Responsive Design
+## Responsive Design
 
 To make the app, `react-bootstrap` was used for an efficient workflow.
 
 Where possible the app was designed with a mobile-first approach, ensuring that the app is responsive and accessible across devices.
 
-### 2.3.1. UiZard Wireframe
+### UiZard Wireframe
 
 The following UiZard wireframe was used as a starting point for the app's design:
 
-![UiZard Wireframe - Mobile](https://res.cloudinary.com/$$$$$$$$$$$$$$$$$)
+![](assets/media/2024-09-18-19-28-04.png)
 Mobile Design
 
-![UiZard Wireframe](https://res.cloudinary.com/$$$$$$$$$$$$$$$$$)
+![](assets/media/2024-09-18-19-28-35.png)
 Desktop Design
 
 The wireframe shows the basic layout of the app, including the navbar, message list, and message detail components. The final design was based on this wireframe, with additional features and styling added to enhance the user experience.
@@ -157,27 +157,27 @@ The wireframe shows the basic layout of the app, including the navbar, message l
 
 
 
-### 2.3.2. Responsive Navbar for Mobile and Desktop
+### Responsive Navbar for Mobile and Desktop
 
 for the Navbar a desktop and mobile component was created to ensure a seamless experience across devices. Then through a hook the Navbar would switch according to screenwidth.
 
-## 2.4. Surface Rendering
+## Surface Rendering
 
 Global vars were used to efficently manage the color scheme and typography.
 
-### 2.4.1. NavBar Design
+### NavBar Design
 
 Figma was used to create a more detailed wireframe for the app, due to time constraints certain components were focused on.
 
 ![](assets/media/2024-09-15-20-42-57.png)
 
-### 2.4.2. Color Scheme and Typefaces with Root vars
+### Color Scheme and Typefaces with Root vars
 
 ![](assets/media/2024-09-15-20-44-48.png)
 
 these were used to create a consistent and visually appealing design for the app, as shown in the image the variables stylesheet was used to set the color scheme and typography for the app. This provided an efficient workflow.
 
-### 2.4.3. Light and Dark Mode with ThemeContext
+### Light and Dark Mode with ThemeContext
 
 Odyssey implements a dynamic theme switching feature using React Context. This system allows for seamless toggling between light and dark modes across the application. Let's dive into how this is implemented.
 

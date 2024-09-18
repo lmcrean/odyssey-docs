@@ -1,8 +1,8 @@
-# 1. Usage
+# Usage
 
 
 
-# 2. Installation
+# Installation
 
 It would be advisable to use the [Gitpod IDE](http://gitpod.io) for the installation process, as it is pre-configured with the necessary tools and dependencies, especially around `nvm` and linking to the API.
 
@@ -55,7 +55,7 @@ To get the frontend app up and running locally, follow these steps:
    This should open in port `8080` or something similar - it will contain the latest changes.
 
 
-## 2.1. Committing to Production - Note on compiling static files
+## Committing to Production - Note on compiling static files
 
 
 This command will delete the old `build` and replace it with the new one: 
@@ -67,7 +67,7 @@ npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
 You will need to re-run this command any time you want to deploy changes to the static files in your project, including the React code. To do this, you need to delete the existing `build` folder and rebuild it.
 
 
-# 3. Automated Testing Instructions
+# Automated Testing Instructions
 
 First, ensure the frontend is opened with:
 
@@ -75,7 +75,7 @@ First, ensure the frontend is opened with:
 cd frontend
 ```
 
-## 3.1. Jest Testing
+## Jest Testing
 
 Tests are located in the `/__tests__` folder, interspersed throughout the js files in `/frontend` directory. To run the tests, use the following command:
 
@@ -83,7 +83,7 @@ Tests are located in the `/__tests__` folder, interspersed throughout the js fil
 npm run test
 ```
 
-## 3.2. Cypress Testing
+## Cypress Testing
 
 Tests are located in the `cypress/integration` folder. To run the tests, use the following command:
 
@@ -118,7 +118,7 @@ npx cypress run --spec "cypress/e2e/user_journey.cy.js" --headed
 ```
 
 
-## 3.3. Playwright Testing
+## Playwright Testing
 
 Tests are located in the `playwright` folder. To run the tests, use the following commands:
 
@@ -133,7 +133,7 @@ if you want to run a specific test, for example `frontend/playwright/auth.test.j
 npx playwright test playwright/auth.spec.js
 ```
 
-# 4. Automated Testing in Backend with python
+# Automated Testing in Backend with python
 
 Tests are located in the `tests` subfolders, each nested in the relevant app folder. To run the tests, use the following command:
 

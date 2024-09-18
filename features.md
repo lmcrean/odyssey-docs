@@ -1,7 +1,7 @@
 
-# 1. Features
+# Features
 
-## 1.1. Messaging
+## Messaging
 
 - **Real-Time Messaging**: Engage in instant messaging with individuals or groups.
 
@@ -10,22 +10,22 @@
 - **Detailed Conversations**: Dive into specific messages within conversations, including media sharing.
 - **Message Forms**: Easily send new messages in active conversations or start new conversations with others.
 
-## 1.2. Posts 
+## Posts 
 
 - Users can create posts and share them with their followers.
 - They can share images and text in their posts.
 
-## 1.3. User Authentication
+## User Authentication
 
 - Users can sign up and log into the app to access their personalized dashboard.
 
-## 1.4. Profiles
+## Profiles
 
 - Users can view detailed profiles of other users, which lists their posts
 - Users can customise their own profiles with a profile picture and bio.
 - The profile picture appears on posts and in the message section.
 
-## 1.5. Follows and Likes
+## Follows and Likes
 
 - Users can follow other users and like their posts.
 - 

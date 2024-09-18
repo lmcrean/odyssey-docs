@@ -1,18 +1,18 @@
-# 5. Acknowledgement and Credits
+# Acknowledgement and Credits
 
-## 5.1. Code Institute Moments app as boilerplate
+## Code Institute Moments app as boilerplate
 
 "Moments" was used as a boilerplate for the project as it contained the necessary features for a social media platform. Both the API and the React frontend were built from this code.
   - Frontend: https://github.com/Code-Institute-Solutions/moments
   - API:  https://github.com/Code-Institute-Solutions/drf-api
 
-## 5.2. Code institute Repo unification tutorial
+## Code institute Repo unification tutorial
 
 A key issue with the project was authnetication not working on Safari browsers, due to having seperate repositories with the frontend and API. 
 
 - [Code Institute](https://codeinstitute.net/) provided a tutorial on how to unify the repositories, which was used to fix the issue.
 
-## 5.3. npm Libraries for frontend
+## npm Libraries for frontend
 
 Below is a table listing the key dependencies and devDependencies used in this project, along with brief descriptions and links to the documentation that may have been refered.
 
@@ -39,7 +39,7 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **msw==^0.35.0**                                              | [msw](https://www.npmjs.com/package/msw) is a mocking library for intercepting network requests during testing.                                                       |
 
 
-## 5.4. Broader Software used
+## Broader Software used
 
 | Software & Version | Description                                                                                   |
 |--------------------|-----------------------------------------------------------------------------------------------|
@@ -54,7 +54,7 @@ Below is a table listing the key dependencies and devDependencies used in this p
 | **PostgreSQL**     | [PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system. |
 | **Gitpod**         | [Gitpod](https://www.gitpod.io/) is an online IDE that provides a fully equipped workspace for development. |
 
-## 5.5. Use of LLMs
+## Use of LLMs
 
 LLMs were used as an AI tool to generate initial drafts which would be meticulously reviewed.
 
@@ -97,10 +97,10 @@ Below is a table listing the key dependencies used in this project, along with b
 | **requests-oauthlib==1.3.0**                | [requests-oauthlib](https://pypi.org/project/requests-oauthlib/) provides OAuthlib authentication support for Python’s Requests library.                               |
 | **sqlparse==0.4.1**                         | [sqlparse](https://pypi.org/project/sqlparse/) is a non-validating SQL parser for Python, useful for formatting and parsing SQL statements.                            |
 
-## 5.6. Personal Acknowledgements
+## Personal Acknowledgements
 
 I would like to thank the following people for their support and guidance throughout the development of this project:
 
-# 6. License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE$$$$$$) file for details.

@@ -1,12 +1,12 @@
-# 1. Testing
+# Testing
 
 The testing process for the Odyssey app involves both manual and automated testing to ensure the functionality and integrity of the application. 
 
-# 2. Manual Testing 
+# Manual Testing 
 
 Pass criteria includes no warning messages, no errors.
 
-## 2.1. Testing the Navbar
+## Testing the Navbar
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Pass criteria includes no warning messages, no errors.
 | Sign Out | Signed in | User is signed out and redirected to the sign in page | Clicked on the sign out button | User was signed out and redirected to the sign in page | Pass |
 | Responsive Design | Both | Navbar is responsive, will switch between a sidebar and bottom in different views, there must be no breaks particularly around the 768px where the hook activates. | Tested on different screen sizes | Navbar was responsive | Pass |
 
-## 2.2. Testing the Home Feed
+## Testing the Home Feed
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -31,7 +31,7 @@ Pass criteria includes no warning messages, no errors.
 | Liked tab | Signed in | Displays posts the user has liked | Clicked on the liked tab | Posts the user has liked were displayed | Pass |
 
 
-## 2.3. Testing the Post functionality
+## Testing the Post functionality
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ Pass criteria includes no warning messages, no errors.
 | Edit Post | Signed in | User is able to edit a post | Edited a post | User was able to edit a post | Pass |
 | Delete Post | Signed in | User is able to delete a post | Deleted a post | User was able to delete a post | Pass |
 
-## 2.4. Testing the Profile Page
+## Testing the Profile Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ Pass criteria includes no warning messages, no errors.
 | follow user link | Signed in | User is able to follow another user | Followed another user | User was able to follow another user | Pass |
 | message user link | Signed in | User is able to message another user | Messaged another user | User was able to message another user | Pass |
 
-## 2.5. Testing the Messages Page
+## Testing the Messages Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -59,21 +59,21 @@ Pass criteria includes no warning messages, no errors.
 | Send Message | Signed in | User is able to send a message | Sent a message | User was able to send a message | Pass |
 | Delete Message | Signed in | User is able to delete a message | Deleted a message | User was able to delete a message | Pass |
 
-## 2.6. Testing the Sign Up Page
+## Testing the Sign Up Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Sign Up | Signed out | User is able to sign up | Signed up | User was able to sign up | Pass |
 | Sign Up Validation | Signed out | User is unable to sign up with invalid credentials | Signed up with invalid credentials | User was unable to sign up | Pass |
 
-## 2.7. Testing the Sign In Page
+## Testing the Sign In Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both |Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
 | Sign In | Signed out | User is able to sign in | Signed in | User was able to sign in | Pass |
 | Sign In Validation | Signed out | User is unable to sign in with invalid credentials | Signed in with invalid credentials | User was unable to sign in | Pass |
 
-## 2.8. Popular profiles component
+## Popular profiles component
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -81,7 +81,7 @@ Pass criteria includes no warning messages, no errors.
 | Follow user | Signed in | User is able to follow a popular profile | Followed a popular profile | User was able to follow a popular profile | Pass |
 | Message user | Signed in | User is able to message a popular profile | Messaged a popular profile | User was able to message a popular profile | Pass |
 
-## 2.9. Landing Page
+## Landing Page
 
 | Feature | Auth status: <br> Signed in/Signed out/ Both | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- | --- |
@@ -89,9 +89,9 @@ Pass criteria includes no warning messages, no errors.
 | Sign Up | Signed out | User is able to sign up from the landing page | Signed up from the landing page | User was able to sign up from the landing page | Pass |
 | Sign In | Signed out | User is able to sign in from the landing page | Signed in from the landing page | User was able to sign in from the landing page | Pass |
 
-# 3. Automated Testing in Frontend with Jest, Cypress and Playwright
+# Automated Testing in Frontend with Jest, Cypress and Playwright
 
-# 5. Automated Frontend Testing Results
+# Automated Frontend Testing Results
 The app includes automatic tests for core components and functionality using testing frameworks like Jest.
 
 - To run tests, use the following command:
@@ -119,7 +119,7 @@ Ran all test suites.
 
 Here's a summary of the test files and what they cover:
 
-## 5.1. Jest Summaries
+## Jest Summaries
 | Test File | Description | Key Methodologies |
 |-----------|-------------|-------------------|
 | Message.test.js | - Tests fetching and displaying the sender's username<br>- Checks error handling when fetching username fails<br>- Verifies the opening and closing of the delete modal<br>- Ensures proper rendering of message content and metadata | - Mocking API responses (axios)<br>- Rendering components with React Testing Library<br>- Simulating user interactions (fireEvent)<br>- Asynchronous testing (act, waitFor)<br>- Snapshot testing for UI consistency |
